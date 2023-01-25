@@ -1,0 +1,44 @@
+body {
+    font-weight: bold;
+    text-align: center;
+    background: #3e3e3e;
+}
+
+h1 {
+    width: 380px;
+    font-size: 25px;
+    color: whitesmoke;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: 2px dashed wheat;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    align-content: center;
+
+}
+
+#board {
+
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    border: 7px solid wheat;
+    background-color: darkgray;
+}
+
+table {
+    border-collapse: collapse;
+
+}
+
+td {
+
+    border: 2px solid #3e3e3e;
+}
+
+td:hover {
+    background-color: rgb(116, 107, 107);
+    color: wheat;
+    cursor: pointer;
+}
