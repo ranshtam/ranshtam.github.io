@@ -1,0 +1,491 @@
+[
+ {
+  "name": "ד״ר חיה ריביצקי",
+  "img": "themind.webp",
+  "url": "https://themind.co.il/",
+  "txt": "● ● ● https://derechlaofek.com/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-co",
+  "thumb": "rs-pj-01.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 1,
+  "store": false
+ },
+ {
+  "name": "דרך לאופק",
+  "img": "derechlaofek.webp",
+  "url": "https://derechlaofek.com/",
+  "txt": "● ● ● https://transferplusil.com/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-",
+  "thumb": "rs-pj-02.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 2,
+  "store": false
+ },
+ {
+  "name": "Transfer Plus",
+  "img": "transferplus-2.webp",
+  "url": "https://transferplusil.com/",
+  "txt": "● ● ● https://rachelidrinks.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e",
+  "thumb": "rs-pj-03.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 3,
+  "store": false
+ },
+ {
+  "name": "משקאות רחלי",
+  "img": "rachelidrinks-1.webp",
+  "url": "https://rachelidrinks.co.il/",
+  "txt": "● ● ● https://eskimoss.com/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e-",
+  "thumb": "rs-pj-04.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 4,
+  "store": true
+ },
+ {
+  "name": "eskimoss",
+  "img": "eskimoss.webp",
+  "url": "https://eskimoss.com/",
+  "txt": "● ● ● https://prolo-cure.co.il/lp3/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex ",
+  "thumb": "rs-pj-05.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 5,
+  "store": true
+ },
+ {
+  "name": "Prolo cure",
+  "img": "Prolo-cure.webp",
+  "url": "https://prolo-cure.co.il/lp3/",
+  "txt": "● ● ● https://www.ruhana.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-co",
+  "thumb": "rs-pj-06.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 6,
+  "store": false
+ },
+ {
+  "name": "רוחנה מוצרי שיער",
+  "img": "ruhana-1.webp",
+  "url": "https://www.ruhana.co.il/",
+  "txt": "● ● ● https://neon-electric.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e",
+  "thumb": "rs-pj-07.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 7,
+  "store": true
+ },
+ {
+  "name": "Neon electric",
+  "img": "Neon-electric.webp",
+  "url": "https://neon-electric.co.il/",
+  "txt": "● ● ● https://thetip.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e-",
+  "thumb": "rs-pj-08.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 8,
+  "store": false
+ },
+ {
+  "name": "טיפ, עדן ישראלי",
+  "img": "thetip.webp",
+  "url": "https://thetip.co.il/",
+  "txt": "● ● ● https://k-booking.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con",
+  "thumb": "rs-pj-09.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 9,
+  "store": false
+ },
+ {
+  "name": "K-booking",
+  "img": "k-booking-b34.webp",
+  "url": "https://k-booking.co.il/",
+  "txt": "● ● ● https://koffi.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e-c",
+  "thumb": "rs-pj-10.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 10,
+  "store": false
+ },
+ {
+  "name": "koffi",
+  "img": "koffi-dfb.webp",
+  "url": "https://koffi.co.il/",
+  "txt": "● ● ● https://levicare.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con ",
+  "thumb": "rs-pj-11.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 11,
+  "store": true
+ },
+ {
+  "name": "לויקר",
+  "img": "orshen-2.png.webp",
+  "url": "https://levicare.co.il/",
+  "txt": "● ● ● https://orshen.com/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e-ch",
+  "thumb": "rs-pj-12.webp",
+  "n": 12,
+  "store": true
+ },
+ {
+  "name": "Orshen",
+  "img": "orshen-2-b62.webp",
+  "url": "https://orshen.com/",
+  "txt": "● ● ● https://yafitlavon.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-co",
+  "thumb": "rs-pj-13.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 13,
+  "store": false
+ },
+ {
+  "name": "עו\"ד יפית לבון",
+  "img": "yafitlavon.png.webp",
+  "url": "https://yafitlavon.co.il/",
+  "txt": "● ● ● https://www.concept-il.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex ",
+  "thumb": "rs-pj-14.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 14,
+  "store": false
+ },
+ {
+  "name": "קונספט פרקטים",
+  "img": "studio89-1.webp",
+  "url": "https://www.concept-il.co.il/",
+  "txt": "● ● ● https://studio89.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con ",
+  "thumb": "rs-pj-15.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 15,
+  "store": false
+ },
+ {
+  "name": "Studio89",
+  "img": "studio89.webp",
+  "url": "https://studio89.co.il/",
+  "txt": "● ● ● http://sit-up.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e-c",
+  "thumb": "rs-pj-16.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 16,
+  "store": false
+ },
+ {
+  "name": "סיט-אפ",
+  "img": "sit-up.co_.il-1.webp",
+  "url": "http://sit-up.co.il/",
+  "txt": "● ● ● https://masoretisrael.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e",
+  "thumb": "rs-pj-17.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 17,
+  "store": true
+ },
+ {
+  "name": "מסורת ישראל",
+  "img": "masoretisrael.co_.il_.webp",
+  "url": "https://masoretisrael.co.il/",
+  "txt": "● ● ● https://kobiyerushalmi.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex ",
+  "thumb": "rs-pj-18.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 18,
+  "store": false
+ },
+ {
+  "name": "קובי ירושלמי",
+  "img": "kobiyerushalmi.co_.il-1.png.webp",
+  "url": "https://kobiyerushalmi.co.il/",
+  "txt": "● ● ● https://boimalca.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con ",
+  "thumb": "rs-pj-19.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 19,
+  "store": false
+ },
+ {
+  "name": "בואי מלכה",
+  "img": "Boimalca.co_.il-1-1.webp",
+  "url": "https://boimalca.co.il/",
+  "txt": "● ● ● https://discovery-flights.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-fl",
+  "thumb": "rs-pj-20.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 20,
+  "store": true
+ },
+ {
+  "name": "Discovery Flights",
+  "img": "discovery-flights.co_.il_-1.webp",
+  "url": "https://discovery-flights.co.il/",
+  "txt": "● ● ● https://iachalom.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con ",
+  "thumb": "rs-pj-21.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 21,
+  "store": false
+ },
+ {
+  "name": "פוליש יהלום",
+  "img": "bcard-6-2.webp",
+  "url": "https://iachalom.co.il/",
+  "txt": "● ● ● https://taamhateva.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-co",
+  "thumb": "rs-pj-22.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 22,
+  "store": false
+ },
+ {
+  "name": "טעם הטבע",
+  "img": "taamhateva.co_.il_.webp",
+  "url": "https://taamhateva.co.il/",
+  "txt": "● ● ● https://hamelatesh.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-co",
+  "thumb": "rs-pj-23.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 23,
+  "store": false
+ },
+ {
+  "name": "המלטש",
+  "img": "hamelatesh.webp",
+  "url": "https://hamelatesh.co.il/",
+  "txt": "● ● ● https://chapteredarlinghurst.com.au/ <div class=\"elementor-element elementor-element-31829b1 e-con-full ",
+  "thumb": "rs-pj-24.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 24,
+  "store": false
+ },
+ {
+  "name": "Chapter E",
+  "img": "chaptere-1.webp",
+  "url": "https://chapteredarlinghurst.com.au/",
+  "txt": "● ● ● https://illusionbakery.aliasdomain.link/ <div class=\"elementor-element elementor-element-31829b1 e-con-f",
+  "thumb": "rs-pj-25.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 25,
+  "store": false
+ },
+ {
+  "name": "אילוז'ן בייקרי",
+  "img": "illusion-bakery.co_.il_.png.webp",
+  "url": "https://illusionbakery.aliasdomain.link/",
+  "txt": "● ● ● https://elianniss.com/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e",
+  "thumb": "rs-pj-26.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 26,
+  "store": false
+ },
+ {
+  "name": "elianniss",
+  "img": "eliannismockup.png.webp",
+  "url": "https://elianniss.com/",
+  "txt": "● ● ● https://eksmedia.net/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e-",
+  "thumb": "rs-pj-27.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 27,
+  "store": false
+ },
+ {
+  "name": "eksMedia",
+  "img": "eksmeidamockup-1.png.webp",
+  "url": "https://eksmedia.net/",
+  "txt": "● ● ● http://photoizhar.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con",
+  "thumb": "rs-pj-28.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 28,
+  "store": false
+ },
+ {
+  "name": "יזהר הצלם",
+  "img": "photoizhar.co_.il_.webp",
+  "url": "http://photoizhar.co.il/",
+  "txt": "● ● ● https://thenationalinvestorcenter.com/ <div class=\"elementor-element elementor-element-31829b1 e-con-ful",
+  "thumb": "rs-pj-29.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 29,
+  "store": true
+ },
+ {
+  "name": "המרכז הארצי למשקיע",
+  "img": "bcard-3.webp",
+  "url": "https://thenationalinvestorcenter.com/",
+  "txt": "● ● ● https://rombedek.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con ",
+  "thumb": "rs-pj-30.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 30,
+  "store": false
+ },
+ {
+  "name": "רום בדק בית",
+  "img": "rombedek.co_.il_.webp",
+  "url": "https://rombedek.co.il/",
+  "txt": "● ● ● ronitabudi.com <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e-child\" ",
+  "thumb": "rs-pj-31.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 31,
+  "store": false
+ },
+ {
+  "name": "רונית עבודי",
+  "img": "ronitabudi.com_.png.webp",
+  "url": "http://ronitabudi.com",
+  "txt": "● ● ● https://topdcard.com/socialmedianoy/ <div class=\"elementor-element elementor-element-31829b1 e-con-full ",
+  "thumb": "rs-pj-32.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 32,
+  "store": false
+ },
+ {
+  "name": "socialmedianoy",
+  "img": "socialmedianoy.co_.il_.png.webp",
+  "url": "https://topdcard.com/socialmedianoy/",
+  "txt": "● ● ● https://shirnavaro.com/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con ",
+  "thumb": "rs-pj-33.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 33,
+  "store": false
+ },
+ {
+  "name": "Shir Navaro",
+  "img": "ShirNavaroMockup.png.webp",
+  "url": "https://shirnavaro.com/",
+  "txt": "● ● ● avishagfitoussi.com <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e-ch",
+  "thumb": "rs-pj-34.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 34,
+  "store": false
+ },
+ {
+  "name": "avishagfitoussi",
+  "img": "avishagmockup-1.png.webp",
+  "url": "http://avishagfitoussi.com",
+  "txt": "● ● ● https://fiteams.co.il/ <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e",
+  "thumb": "rs-pj-35.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 35,
+  "store": false
+ },
+ {
+  "name": "fiteams",
+  "img": "fiteams.co_.il_.png.webp",
+  "url": "https://fiteams.co.il/",
+  "txt": "● ● ● www.Yfkbaby.com <div class=\"elementor-element elementor-element-31829b1 e-con-full e-flex e-con e-child\"",
+  "thumb": "rs-pj-36.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 36,
+  "store": false
+ },
+ {
+  "name": "YFKbaby",
+  "img": "www.Yfkbaby.com_.png.webp",
+  "url": "http://www.Yfkbaby.com",
+  "txt": "/* ranshtam: project cards. Bare domain in the address bar, desktop tilt + spotlight, mobile focus on the cent",
+  "thumb": "rs-pj-37.webp",
+  "size": [
+   1080,
+   1080
+  ],
+  "n": 37,
+  "store": true
+ },
+ {
+  "name": "קדם קפה",
+  "url": "https://kedemcoffee.co.il/",
+  "n": 38,
+  "store": true
+ },
+ {
+  "name": "Romeo Gifts",
+  "url": "https://romeo-gifts.co.il/",
+  "n": 39,
+  "store": true
+ }
+]

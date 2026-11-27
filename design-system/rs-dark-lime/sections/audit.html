@@ -1,0 +1,91 @@
+<section class="rs-audit" id="check" dir="rtl" aria-label="בדיקת חנות חינם">
+  <style>
+    .rs-audit{--nos:"Nostela FS",Talent,Arial,sans-serif;--tal:Talent,"Segoe UI",Arial,sans-serif;position:relative;overflow:hidden;background:#101400;color:#fff;font-family:var(--tal);padding:120px 0 130px}
+    .rs-audit *{box-sizing:border-box;margin:0}
+    .rs-audit p:empty{display:none}
+    .rs-audit::before{content:"";position:absolute;left:50%;top:50%;width:1100px;height:620px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(202,252,1,.16),rgba(202,252,1,.05) 55%,rgba(202,252,1,0));pointer-events:none}
+    .rs-audit__in{position:relative;max-width:820px;margin:0 auto;padding:0 24px;text-align:center;perspective:1300px}
+    .rs-audit__card{position:relative;padding:56px 56px 44px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 90px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.12);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);opacity:0;transform-style:preserve-3d;transform:translateY(26px) rotateX(10deg);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+    .rs-audit.is-in .rs-audit__card{opacity:1;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+    .rs-audit.is-tilt .rs-audit__card{transition:opacity .8s,transform .12s linear}
+    .rs-audit .rs-audit__kicker{transform:translateZ(22px)}
+    .rs-audit h2.rs-audit__h{transform:translateZ(34px)}
+    .rs-audit p.rs-audit__p{transform:translateZ(18px)}
+    .rs-audit__pts{transform:translateZ(14px)}
+    .rs-audit__fw{position:absolute;display:block;pointer-events:none;animation:rs-audit-fl 6s ease-in-out infinite alternate}
+    .rs-audit .rs-audit__fw .rs-i3{font-size:var(--fs,64px)}
+    .rs-audit__fw.f1{--fs:76px;top:-34px;inset-inline-start:-30px;transform:translateZ(80px)}
+    .rs-audit__fw.f2{--fs:62px;top:44%;inset-inline-end:-38px;transform:translateZ(60px);animation-duration:7.5s;animation-delay:-2s}
+    .rs-audit__fw.f3{--fs:70px;bottom:-30px;inset-inline-start:9%;transform:translateZ(90px);animation-duration:6.8s;animation-delay:-4s}
+    @keyframes rs-audit-fl{from{translate:0 -9px}to{translate:0 9px}}
+    .rs-audit__card::before{content:"";position:absolute;left:50%;top:-1px;width:46%;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#CAFC01,transparent)}
+    .rs-audit .rs-audit__kicker{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;letter-spacing:.03em;color:#CAFC01;margin-bottom:18px}
+    .rs-audit .rs-audit__kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:#CAFC01;box-shadow:0 0 0 4px rgba(202,252,1,.18)}
+    .rs-audit h2.rs-audit__h{font-family:var(--nos);font-weight:900;font-size:clamp(26px,3.1vw,44px);line-height:1.12;color:#fff;margin:0;padding:0}
+    .rs-audit h2.rs-audit__h em{font-style:normal;color:#CAFC01}
+    .rs-audit p.rs-audit__p{font-size:clamp(16px,1.25vw,18px);line-height:1.65;color:#c9cdbb;margin:18px auto 0;max-width:560px}
+    .rs-audit__form{display:flex;gap:10px;max-width:600px;margin:32px auto 0;padding:8px 8px 12px;border-radius:999px;background:linear-gradient(180deg,rgba(0,0,0,.62),rgba(0,0,0,.36));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 4px 12px rgba(0,0,0,.7),inset 0 -1px 0 rgba(255,255,255,.1),0 1px 0 rgba(255,255,255,.08);transform:translateZ(46px);transition:border-color .25s,box-shadow .25s}
+    .rs-audit__form:focus-within{border-color:rgba(202,252,1,.65);box-shadow:inset 0 4px 12px rgba(0,0,0,.7),inset 0 -1px 0 rgba(255,255,255,.1),0 0 0 4px rgba(202,252,1,.14)}
+    .rs-audit .rs-audit__form input.rs-audit__url,.rs-audit .rs-audit__form input.rs-audit__url:focus,.rs-audit .rs-audit__form input.rs-audit__url:hover{flex:1;min-width:0;width:auto;height:54px;margin:0;padding:0 22px;border:0!important;outline:0!important;border-radius:999px!important;background:transparent!important;background-color:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff;caret-color:#CAFC01;font-family:var(--tal);font-size:16px;line-height:54px;direction:ltr;text-align:right;box-shadow:none!important;-webkit-appearance:none;appearance:none}
+    .rs-audit .rs-audit__form input.rs-audit__url:-webkit-autofill,.rs-audit .rs-audit__form input.rs-audit__url:-webkit-autofill:focus{-webkit-box-shadow:0 0 0 80px #12160a inset!important;box-shadow:0 0 0 80px #12160a inset!important;-webkit-text-fill-color:#fff!important;caret-color:#CAFC01}
+    .rs-audit .rs-audit__form input.rs-audit__url::placeholder{color:#8d927e;-webkit-text-fill-color:#8d927e;opacity:1;direction:rtl}
+    .rs-audit a.rs-audit__btn,.rs-audit a.rs-audit__btn:hover,.rs-audit a.rs-audit__btn:focus,.rs-audit a.rs-audit__btn:visited{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;height:54px;padding:0 26px;border-radius:999px;background:linear-gradient(180deg,#e6ff5c,#CAFC01 55%,#b4e000);color:#101400;font-family:var(--tal);font-weight:600;font-size:16px;text-decoration:none;box-shadow:0 5px 0 #7f9d00,0 16px 30px rgba(202,252,1,.26),inset 0 1px 0 rgba(255,255,255,.6);transition:transform .15s,box-shadow .15s}
+    .rs-audit a.rs-audit__btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 #7f9d00,0 20px 36px rgba(202,252,1,.34),inset 0 1px 0 rgba(255,255,255,.6)}
+    .rs-audit a.rs-audit__btn:active{transform:translateY(4px);box-shadow:0 1px 0 #7f9d00,0 6px 14px rgba(202,252,1,.2),inset 0 1px 0 rgba(255,255,255,.6)}
+    .rs-audit a.rs-audit__btn svg{width:19px;height:19px}
+    .rs-audit .rs-audit__sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .rs-audit__pts{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px}
+    .rs-audit__pts li{display:flex;align-items:center;gap:8px;font-size:14.5px;color:#c9cdbb}
+    .rs-audit__pts svg{flex:none;width:16px;height:16px;color:#CAFC01}
+    @media (max-width:980px){
+      .rs-audit{padding:64px 0 72px}
+      .rs-audit__in{padding:0 16px}
+      .rs-audit__card{padding:36px 20px 30px;border-radius:22px}
+      .rs-audit__form{flex-direction:column;border-radius:20px;padding:8px;gap:8px}
+      .rs-audit .rs-audit__form input.rs-audit__url,.rs-audit .rs-audit__form input.rs-audit__url:focus,.rs-audit .rs-audit__form input.rs-audit__url:hover{flex:none;width:100%;height:52px;line-height:52px;border-radius:14px!important;background:rgba(255,255,255,.05)!important;text-align:center}
+      .rs-audit a.rs-audit__btn{height:50px;border-radius:14px;width:100%}
+      .rs-audit__pts{flex-direction:column;align-items:center;gap:8px}
+      .rs-audit__form{transform:none;padding:8px}
+      .rs-audit__fw.f1{--fs:52px;top:-24px;inset-inline-start:-6px}
+      .rs-audit__fw.f2{--fs:44px;top:-18px;inset-inline-end:-4px}
+      .rs-audit__fw.f3{display:none}
+    }
+    @media (prefers-reduced-motion:reduce){.rs-audit .rs-audit__card{opacity:1;transform:none;transition:none}.rs-audit .rs-audit__fw{animation:none}}
+  </style>
+  <div class="rs-audit__in"><div class="rs-audit__card">
+    <span class="rs-audit__fw f1" aria-hidden="true"><span class="rs-i3 rs-i3--coin"><span class="o"><i class="m m1"></i><i class="m m2"></i><i class="m m3"></i><i class="cf"></i><i class="cb"></i></span></span></span><span class="rs-audit__fw f2" aria-hidden="true"><span class="rs-i3 rs-i3--box"><span class="o"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><i class="c5"></i><i class="c6"></i></span></span></span><span class="rs-audit__fw f3" aria-hidden="true"><span class="rs-i3 rs-i3--card"><span class="o"><i class="f"></i><i class="b"></i></span></span></span>
+    <p class="rs-audit__kicker">בדיקה חינם, בלי התחייבות</p>
+    <h2 class="rs-audit__h">רוצה לדעת איפה <em>החנות שלך</em> מפסידה?</h2>
+    <p class="rs-audit__p">שלחו לי את הכתובת של החנות, ואחזור אליכם עם שלושה מקומות שבהם אפשר להתחיל למכור יותר.</p>
+    <div class="rs-audit__form">
+      <label class="rs-audit__sr" for="rs-audit-url">כתובת החנות שלך</label>
+      <input class="rs-audit__url" id="rs-audit-url" name="rs-store-address" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-form-type="other" placeholder="כתובת החנות שלך">
+      <a class="rs-audit__btn" href="https://wa.me/972527460037?text=%D7%94%D7%99%D7%99%20%D7%A8%D7%9F%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%97%D7%A0%D7%95%D7%AA" target="_blank" rel="noopener">שלחו לבדיקה<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg></a>
+    </div>
+    <ul class="rs-audit__pts">
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>תשובה אישית ממני, לא אוטומטית</li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>בדיקה של עמוד מוצר, עגלה וקופה</li>
+      <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>בלי התחייבות</li>
+    </ul>
+  </div></div>
+  <script nowprocket data-nowprocket="1">
+  (function(){
+    var s=document.currentScript, sec=(s?s.closest:0)?s.closest('.rs-audit'):null;
+    if(!sec){var all=document.querySelectorAll('.rs-audit');sec=all[all.length-1];}
+    if(!sec)return; if(sec.dataset.rsInit)return; sec.dataset.rsInit='1';
+    var inp=sec.querySelector('.rs-audit__url'), btn=sec.querySelector('.rs-audit__btn'), NUM='972527460037';
+    function link(){var v=(inp.value||'').trim(), t='היי רן, אשמח לבדיקת חנות'+(v?'. הכתובת: '+v:'');return 'https://wa.me/'+NUM+'?text='+encodeURIComponent(t);}
+    function upd(){btn.setAttribute('href',link());}
+    inp.addEventListener('input',upd);
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();upd();window.open(btn.getAttribute('href'),'_blank','noopener');}});
+    btn.addEventListener('click',upd);
+    var fine=window.matchMedia?window.matchMedia('(hover:hover) and (pointer:fine)').matches:false, red=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)').matches:false, card=sec.querySelector('.rs-audit__card'), tr=0, tx=0, ty=0;
+    function tilt(){tr=0;card.style.setProperty('--rx',(-ty*5).toFixed(2)+'deg');card.style.setProperty('--ry',(tx*7).toFixed(2)+'deg');}
+    if(fine){if(!red){
+      sec.addEventListener('pointermove',function(e){var b=card.getBoundingClientRect();tx=Math.max(-1,Math.min(1,(e.clientX-b.left-b.width/2)/(b.width/2)));ty=Math.max(-1,Math.min(1,(e.clientY-b.top-b.height/2)/(b.height/2)));sec.classList.add('is-tilt');if(!tr)tr=requestAnimationFrame(tilt);});
+      sec.addEventListener('pointerleave',function(){sec.classList.remove('is-tilt');tx=0;ty=0;tilt();});
+    }}
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){sec.classList.add('is-in');io.disconnect();}},{threshold:.25});io.observe(sec);}else{sec.classList.add('is-in');}
+  })();
+  </script>
+</section>
