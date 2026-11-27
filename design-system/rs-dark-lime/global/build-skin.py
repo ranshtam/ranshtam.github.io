@@ -14,7 +14,7 @@ rules = [
     R + '{color:#c9cdbb;background:radial-gradient(900px 520px at 50% 0,rgba(202,252,1,.07),rgba(202,252,1,0) 70%)}',
     R + ' :is(h1,h2,h3,h4,h5,h6,.elementor-heading-title,.elementor-icon-box-title,.elementor-icon-box-title a,.elementor-tab-title,.elementor-toggle-title){color:#fff!important}',
     R + ' :is(p,li,.elementor-icon-list-text,.elementor-icon-box-description,.elementor-widget-text-editor,.elementor-tab-content){color:#c9cdbb!important}',
-    R + ' .ph-mark{color:#CAFC01!important;background:none!important;box-shadow:none!important}',
+    R + ' .ph-mark{color:#101400!important}',
     R + ' :is(.ph-h2,.ph-line){color:#fff!important}',
     R + ' .ph-line.ph-3{color:#9aa08a!important}',
     ids(light) + '{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025))!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 22px 50px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.1)!important;transition:border-color .3s,transform .3s}',

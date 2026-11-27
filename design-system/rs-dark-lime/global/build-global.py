@@ -71,6 +71,19 @@ add_action( 'wp_head', function () {
 </style>
 RS_HTML_9X;
 }, 99 );
+add_action( 'wp_head', function () {
+	if ( rs_global_chrome_skip() ) {
+		return;
+	}
+	if ( ! ( is_singular( 'post' ) || is_post_type_archive( 'projects' ) || is_category() || is_tag() || is_search() || is_page( array( 24531, 24385, 24272, 21338 ) ) ) ) {
+		return;
+	}
+	echo <<<'RS_HTML_9X'
+<style id="rs-skin2">
+@@SKIN2@@
+</style>
+RS_HTML_9X;
+}, 99 );
 add_action( 'elementor/theme/before_do_header', function () {
 	if ( rs_global_chrome_skip() ) {
 		return;
@@ -95,5 +108,5 @@ add_action( 'elementor/theme/after_do_footer', function () {
 @@FOOTER@@
 RS_HTML_9X;
 }, 50 );
-'''.replace('@@SKIN@@',open('../skin/skin.css',encoding='utf8').read().rstrip()).replace('@@CONTACT@@',open('g-contact.html',encoding='utf8').read().rstrip()).replace('@@HEADER@@',open('g-header.html',encoding='utf8').read().rstrip()).replace('@@FOOTER@@',open('g-footer.html',encoding='utf8').read().rstrip())
+'''.replace('@@SKIN2@@',open('../skin/skin2.css',encoding='utf8').read().rstrip()).replace('@@SKIN@@',open('../skin/skin.css',encoding='utf8').read().rstrip()).replace('@@CONTACT@@',open('g-contact.html',encoding='utf8').read().rstrip()).replace('@@HEADER@@',open('g-header.html',encoding='utf8').read().rstrip()).replace('@@FOOTER@@',open('g-footer.html',encoding='utf8').read().rstrip())
 open('snippet.php','w',encoding='utf8').write(php); print('snippet',len(php))
