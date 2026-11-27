@@ -626,6 +626,24 @@
       sec.addEventListener('pointerleave',function(){sec.classList.remove('is-tilt');tx=0;ty=0;tilt();});
     }}
     if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){sec.classList.add('is-in');io.disconnect();}},{threshold:.25});io.observe(sec);}else{sec.classList.add('is-in');}
+    /* Phones: if opening the keyboard leaves the focused field off screen, bring it back. Covers every rs field on the page. */
+    if(!window.__rsKeep){window.__rsKeep=1;
+      var touch=window.matchMedia?window.matchMedia('(hover: none)').matches:false;
+      if(touch){
+        var keep=function(el){
+          if(document.activeElement!==el)return;
+          var vv=window.visualViewport, h=vv?vv.height:window.innerHeight, off=vv?vv.offsetTop:0, r=el.getBoundingClientRect(), y=r.top-off;
+          if(y<64){window.scrollTo(0,window.scrollY+y-Math.max(84,(h-r.height)*.3));return;}
+          if(y+r.height>h-12){window.scrollTo(0,window.scrollY+y-Math.max(84,(h-r.height)*.3));}
+        };
+        document.addEventListener('focusin',function(e){
+          var el=e.target; if(!el)return; if(!el.matches)return;
+          if(!el.matches('.rs-audit__url,.rs-ct__i'))return;
+          [320,650,1000].forEach(function(ms){setTimeout(function(){keep(el);},ms);});
+          if(window.visualViewport){var once=function(){window.visualViewport.removeEventListener('resize',once);setTimeout(function(){keep(el);},60);};window.visualViewport.addEventListener('resize',once);}
+        });
+      }
+    }
   })();
   </script>
 </section><div class="rs-b" dir="rtl">
