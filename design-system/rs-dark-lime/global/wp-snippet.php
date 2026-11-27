@@ -11,6 +11,7 @@ add_filter( 'rocket_rucss_inline_content_exclusions', function ( $list ) {
 	$list[] = '.rs-hd{';
 	$list[] = '.rs-ft{';
 	$list[] = '.rs-waf{';
+	$list[] = '.rs-ct{';
 	return $list;
 } );
 function rs_global_chrome_skip() {
@@ -151,6 +152,244 @@ add_action( 'elementor/theme/before_do_header', function () {
   </script>
 </div>
 <div class="rs-hd-sp" aria-hidden="true"></div>
+RS_HTML_9X;
+}, 5 );
+add_action( 'elementor/theme/before_do_footer', function () {
+	if ( rs_global_chrome_skip() || ! is_page( array( 25384, 25949, 25919 ) ) ) {
+		return;
+	}
+	echo <<<'RS_HTML_9X'
+<section class="rs-ct" id="contact" aria-label="יצירת קשר">
+  <style>
+    .rs-ct{--nos:"Nostela FS",Talent,Arial,sans-serif;--tal:Talent,"Segoe UI",Arial,sans-serif;position:relative;direction:rtl;text-align:right;overflow:hidden;overflow:clip;background:#101400;color:#fff;font-family:var(--tal);padding:120px 0 130px;scroll-margin-top:70px;border-top:1px solid rgba(255,255,255,.08)}
+    .rs-ct *{box-sizing:border-box}
+    .rs-ct__anchor{position:absolute;top:0;left:0;width:1px;height:1px;scroll-margin-top:70px}
+    .rs-ct p:empty{display:none}
+    .rs-ct form.rs-ct__form p{display:contents;margin:0}
+    .rs-ct__glow{position:absolute;inset:auto auto -30% -10%;width:70%;height:90%;background:radial-gradient(closest-side,rgba(202,252,1,.13),rgba(202,252,1,0));pointer-events:none}
+    .rs-ct__in{position:relative;max-width:1240px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:72px;align-items:center}
+    .rs-ct__txt{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+    .rs-ct.is-in .rs-ct__txt{opacity:1;transform:none}
+    .rs-ct .rs-ct__k{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;letter-spacing:.03em;color:#CAFC01;margin:0 0 18px}
+    .rs-ct .rs-ct__k::before{content:"";width:7px;height:7px;border-radius:50%;background:#CAFC01;box-shadow:0 0 0 4px rgba(202,252,1,.18)}
+    .rs-ct h2.rs-ct__h{font-family:var(--nos);font-weight:900;font-size:clamp(30px,3.6vw,52px);line-height:1.1;color:#fff;margin:0;padding:0}
+    .rs-ct h2.rs-ct__h em{font-style:normal;color:#CAFC01;display:block}
+    .rs-ct .rs-ct__p{font-size:18px;line-height:1.7;color:#c9cdbb;margin:22px 0 0;max-width:460px}
+    .rs-ct__pts{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:12px}
+    .rs-ct__pts li{display:flex;align-items:center;gap:12px;font-size:16px;color:#fff}
+    .rs-ct__pts li i{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(180deg,#e6ff5c,#b4e000);color:#101400;box-shadow:0 3px 0 #7f9d00,0 8px 16px rgba(202,252,1,.22),inset 0 1px 0 rgba(255,255,255,.6)}
+    .rs-ct__pts li i svg{width:14px;height:14px}
+    .rs-ct__alt{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);font-size:15px;color:#9aa08a}
+    .rs-ct .rs-ct__alt a,.rs-ct .rs-ct__alt a:visited{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-weight:600;transition:color .2s}
+    .rs-ct .rs-ct__alt a:hover{color:#CAFC01}
+    .rs-ct__alt svg{width:18px;height:18px;color:#CAFC01}
+    .rs-ct__alt--m{display:none!important}
+    .rs-ct__stage{perspective:1400px}
+    .rs-ct__card{position:relative;border-radius:28px;padding:1px;background:radial-gradient(420px circle at var(--gx,50%) var(--gy,0%),rgba(202,252,1,.75),rgba(255,255,255,.14) 42%,rgba(255,255,255,.08));box-shadow:0 40px 90px rgba(0,0,0,.5);opacity:0;transform:translateY(34px) rotateX(9deg);transform-origin:50% 100%;transition:opacity .9s,transform 1s cubic-bezier(.2,.8,.2,1)}
+    .rs-ct.is-in .rs-ct__card{opacity:1;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+    .rs-ct.is-tilt .rs-ct__card{transition:opacity .9s,transform .14s linear}
+    .rs-ct__body{position:relative;border-radius:27px;padding:34px 34px 30px;background:linear-gradient(180deg,#1a1f0c,#12160a);overflow:hidden}
+    .rs-ct__body::before{content:"";position:absolute;inset:0;background:radial-gradient(520px circle at var(--gx,50%) var(--gy,0%),rgba(202,252,1,.09),rgba(202,252,1,0) 60%);pointer-events:none}
+    .rs-ct__prog{position:absolute;top:0;inset-inline:0;height:3px;background:rgba(255,255,255,.07)}
+    .rs-ct__prog i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#eaff7a,#CAFC01);box-shadow:0 0 14px rgba(202,252,1,.8);transform-origin:100% 50%;transform:scaleX(var(--pg,0));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+    .rs-ct form.rs-ct__form{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0;padding:0}
+    .rs-ct__full{grid-column:1/-1}
+    .rs-ct .rs-ct__lg{display:block;font-size:14px;font-weight:600;color:#dfe3d2;margin:0 0 10px;padding:0}
+    .rs-ct__opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .rs-ct__opt{position:relative;display:block;cursor:pointer;margin:0}
+    .rs-ct__opts.is-chips{display:flex;flex-wrap:wrap;gap:8px}
+    .rs-ct__opts.is-chips .rs-ct__opt span{padding:10px 16px;border-radius:999px;font-size:14.5px;font-weight:500}
+    .e-con.e-parent:has(.rs-form-card form.elementor-form){display:none!important}
+    .rs-ct .rs-ct__opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+    .rs-ct__opt span{display:flex;align-items:center;gap:12px;height:100%;padding:16px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.035);color:#fff;font-size:15.5px;font-weight:600;line-height:1.3;transition:border-color .25s,background .25s,transform .25s cubic-bezier(.2,.9,.3,1.5),box-shadow .25s}
+    .rs-ct__opt span svg{flex:none;width:26px;height:26px;fill:none;stroke:rgba(255,255,255,.6);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+    .rs-ct__opt:hover span{border-color:rgba(202,252,1,.45);transform:translateY(-2px)}
+    .rs-ct__opt input:checked+span{border-color:#CAFC01;background:rgba(202,252,1,.1);box-shadow:0 0 0 4px rgba(202,252,1,.1),0 14px 28px rgba(0,0,0,.35)}
+    .rs-ct__opt input:checked+span svg{stroke:#CAFC01}
+    .rs-ic{overflow:visible}
+    .rs-ic .d{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .7s cubic-bezier(.5,0,.2,1) calc(.25s + var(--i)*.12s)}
+    .rs-ct.is-in .rs-ic .d{stroke-dashoffset:0}
+    .rs-ic .aw,.rs-ic .dr,.rs-ic .b,.rs-ic .ar{transform-box:fill-box}
+    .rs-ic .aw{transform-origin:50% 0}
+    .rs-ic .dr{transform-origin:0 100%}
+    .rs-ic .b{transform-origin:50% 100%}
+    .rs-ic .ar{transform-origin:0 100%}
+    @keyframes rs-ic-aw{0%,100%{transform:none}30%{transform:scaleY(1.35) translateY(.4px)}60%{transform:scaleY(.85)}}
+    @keyframes rs-ic-dr{0%,100%{transform:none}45%{transform:scaleX(.25)}}
+    @keyframes rs-ic-b{0%{transform:scaleY(.25)}65%{transform:scaleY(1.12)}100%{transform:none}}
+    @keyframes rs-ic-ar{0%,100%{transform:none}50%{transform:translate(1.6px,-1.6px)}}
+    .rs-ct__opt:hover .rs-ic .aw,.rs-ct__opt input:checked+span .rs-ic .aw{animation:rs-ic-aw .7s cubic-bezier(.3,.7,.3,1.3)}
+    .rs-ct__opt:hover .rs-ic .dr,.rs-ct__opt input:checked+span .rs-ic .dr{animation:rs-ic-dr .8s cubic-bezier(.4,0,.2,1) .1s}
+    .rs-ct__opt:hover .rs-ic .b,.rs-ct__opt input:checked+span .rs-ic .b{animation:rs-ic-b .7s cubic-bezier(.3,.7,.3,1.4) both}
+    .rs-ct__opt:hover .rs-ic .b:nth-of-type(3),.rs-ct__opt input:checked+span .rs-ic .b:nth-of-type(3){animation-delay:.08s}
+    .rs-ct__opt:hover .rs-ic .b:nth-of-type(4),.rs-ct__opt input:checked+span .rs-ic .b:nth-of-type(4){animation-delay:.16s}
+    .rs-ct__opt:hover .rs-ic .ar,.rs-ct__opt input:checked+span .rs-ic .ar{animation:rs-ic-ar .6s cubic-bezier(.3,.7,.3,1.3) .25s}
+    .rs-ct__opt input:checked+span .rs-ic{filter:drop-shadow(0 0 6px rgba(202,252,1,.45))}
+    .rs-ct__opt input:focus-visible+span{outline:2px solid #CAFC01;outline-offset:3px}
+    .rs-ct__f{position:relative;display:block;margin:0}
+    .rs-ct .rs-ct__form .rs-ct__f input.rs-ct__i,.rs-ct .rs-ct__form .rs-ct__f textarea.rs-ct__i,.rs-ct .rs-ct__form .rs-ct__f input.rs-ct__i:focus,.rs-ct .rs-ct__form .rs-ct__f textarea.rs-ct__i:focus,.rs-ct .rs-ct__form .rs-ct__f input.rs-ct__i:hover,.rs-ct .rs-ct__form .rs-ct__f textarea.rs-ct__i:hover{display:block;width:100%;height:60px;margin:0;padding:24px 16px 6px;border:1px solid rgba(255,255,255,.14)!important;border-radius:16px!important;outline:0!important;background:rgba(255,255,255,.035)!important;background-color:rgba(255,255,255,.035)!important;color:#fff!important;-webkit-text-fill-color:#fff;caret-color:#CAFC01;font-family:var(--tal);font-size:16px;line-height:1.4;box-shadow:none!important;transition:border-color .25s,box-shadow .25s,background-color .25s;-webkit-appearance:none;appearance:none}
+    .rs-ct .rs-ct__form .rs-ct__f textarea.rs-ct__i,.rs-ct .rs-ct__form .rs-ct__f textarea.rs-ct__i:focus,.rs-ct .rs-ct__form .rs-ct__f textarea.rs-ct__i:hover{height:112px;padding-top:28px;resize:none}
+    .rs-ct .rs-ct__form .rs-ct__f input.rs-ct__i:focus,.rs-ct .rs-ct__form .rs-ct__f textarea.rs-ct__i:focus{border-color:#CAFC01!important;background-color:rgba(202,252,1,.05)!important;box-shadow:0 0 0 4px rgba(202,252,1,.12)!important}
+    .rs-ct .rs-ct__form .rs-ct__f input.rs-ct__i:-webkit-autofill,.rs-ct .rs-ct__form .rs-ct__f input.rs-ct__i:-webkit-autofill:focus{-webkit-box-shadow:0 0 0 80px #171c0b inset!important;box-shadow:0 0 0 80px #171c0b inset!important;-webkit-text-fill-color:#fff!important}
+    .rs-ct .rs-ct__i::placeholder{color:transparent;-webkit-text-fill-color:transparent}
+    .rs-ct .rs-ct__i.is-ltr{direction:ltr;text-align:right}
+    .rs-ct .rs-ct__f label.rs-ct__l{position:absolute;top:19px;inset-inline-start:17px;margin:0;padding:0;font-size:16px;font-weight:400;color:#9aa08a;pointer-events:none;transform-origin:100% 0;transition:transform .22s cubic-bezier(.2,.8,.2,1),color .22s}
+    .rs-ct .rs-ct__i:focus+label.rs-ct__l,.rs-ct .rs-ct__i:not(:placeholder-shown)+label.rs-ct__l{transform:translateY(-11px) scale(.76);color:#CAFC01}
+    .rs-ct__f.is-err .rs-ct__i{border-color:#ff7a66!important;box-shadow:0 0 0 4px rgba(255,122,102,.12)!important}
+    .rs-ct .rs-ct__e{display:none;margin:6px 4px 0;font-size:13px;line-height:1.4;color:#ff9a8a}
+    .rs-ct .is-err .rs-ct__e{display:block}
+    .rs-ct__ok{position:relative;display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:13.5px;line-height:1.5;color:#b9bea9;margin:2px 0 0}
+    .rs-ct .rs-ct__ok input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+    .rs-ct__ok b{flex:none;display:grid;place-items:center;width:22px;height:22px;margin-top:-1px;border-radius:7px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.04);color:transparent;transition:background .2s,border-color .2s,color .2s,transform .25s cubic-bezier(.2,.9,.3,1.7)}
+    .rs-ct__ok b svg{width:13px;height:13px}
+    .rs-ct__ok input:checked+b{background:#CAFC01;border-color:#CAFC01;color:#101400;transform:scale(1.08)}
+    .rs-ct__ok input:focus-visible+b{outline:2px solid #CAFC01;outline-offset:3px}
+    .rs-ct__ok.is-err b{border-color:#ff7a66}
+    .rs-ct .rs-ct__ok a,.rs-ct .rs-ct__ok a:visited{color:inherit;text-decoration:underline}
+    .rs-ct .rs-ct__ok a:hover{color:#CAFC01}
+    .rs-ct .rs-ct__form button.rs-ct__go,.rs-ct .rs-ct__form button.rs-ct__go:hover,.rs-ct .rs-ct__form button.rs-ct__go:focus{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:60px;margin:6px 0 0;padding:0 26px;border:0!important;border-radius:999px!important;background:linear-gradient(180deg,#e6ff5c,#CAFC01 55%,#b4e000)!important;color:#101400!important;font-family:var(--tal);font-weight:600;font-size:17px;cursor:pointer;box-shadow:0 5px 0 #7f9d00,0 16px 30px rgba(202,252,1,.26),inset 0 1px 0 rgba(255,255,255,.6)!important;transition:transform .15s,box-shadow .15s,opacity .2s;-webkit-appearance:none;appearance:none}
+    .rs-ct .rs-ct__form button.rs-ct__go:hover{transform:translateY(-2px);box-shadow:0 7px 0 #7f9d00,0 20px 36px rgba(202,252,1,.34),inset 0 1px 0 rgba(255,255,255,.6)!important}
+    .rs-ct .rs-ct__form button.rs-ct__go:active{transform:translateY(4px);box-shadow:0 1px 0 #7f9d00,0 6px 14px rgba(202,252,1,.2),inset 0 1px 0 rgba(255,255,255,.6)!important}
+    .rs-ct__go svg{width:18px;height:18px;transition:transform .2s}
+    .rs-ct__go:hover svg{transform:translateX(-4px)}
+    .rs-ct__go .sp{display:none;width:20px;height:20px;border-radius:50%;border:2.5px solid rgba(16,20,0,.25);border-top-color:#101400;animation:rs-ct-spin .7s linear infinite}
+    .rs-ct__form.is-busy .rs-ct__go{pointer-events:none;opacity:.85}
+    .rs-ct__form.is-busy .rs-ct__go .sp{display:block}
+    .rs-ct__form.is-busy .rs-ct__go svg{display:none}
+    @keyframes rs-ct-spin{to{transform:rotate(360deg)}}
+    .rs-ct .rs-ct__msg{display:none;grid-column:1/-1;margin:0;padding:12px 14px;border-radius:12px;background:rgba(255,122,102,.1);border:1px solid rgba(255,122,102,.4);color:#ffb3a6;font-size:14.5px;line-height:1.5}
+    .rs-ct .rs-ct__msg.is-on{display:block}
+    .rs-ct__done{display:none;position:relative;text-align:center;padding:46px 10px 40px}
+    .rs-ct__body.is-done form.rs-ct__form{display:none}
+    .rs-ct__body.is-done .rs-ct__done{display:block;animation:rs-ct-in .6s cubic-bezier(.2,.8,.2,1)}
+    @keyframes rs-ct-in{from{opacity:0;transform:translateY(16px) scale(.97)}}
+    .rs-ct__ring{position:relative;display:grid;place-items:center;width:92px;height:92px;margin:0 auto 26px;border-radius:50%;background:linear-gradient(180deg,#e6ff5c,#b4e000);color:#101400;box-shadow:0 6px 0 #7f9d00,0 24px 50px rgba(202,252,1,.35),inset 0 2px 0 rgba(255,255,255,.6)}
+    .rs-ct__ring::before,.rs-ct__ring::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(202,252,1,.6);opacity:0}
+    .rs-ct__body.is-done .rs-ct__ring::before{animation:rs-ct-burst 1.1s ease-out .15s}
+    .rs-ct__body.is-done .rs-ct__ring::after{animation:rs-ct-burst 1.1s ease-out .4s}
+    @keyframes rs-ct-burst{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(2.1)}}
+    .rs-ct__ring svg{width:44px;height:44px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .rs-ct__ring svg path{stroke-dasharray:1;stroke-dashoffset:1}
+    .rs-ct__body.is-done .rs-ct__ring svg path{animation:rs-ct-draw .55s cubic-bezier(.5,0,.2,1) .25s forwards}
+    @keyframes rs-ct-draw{to{stroke-dashoffset:0}}
+    .rs-ct .rs-ct__done h3{font-family:var(--nos);font-weight:900;font-size:28px;line-height:1.2;color:#fff;margin:0;padding:0}
+    .rs-ct .rs-ct__done p{font-size:17px;line-height:1.7;color:#c9cdbb;margin:14px auto 0;max-width:380px}
+    @media (max-width:980px){
+      .rs-ct{padding:64px 0 76px}
+      .rs-ct__in{grid-template-columns:1fr;gap:24px;padding:0 16px}
+      .rs-ct__txt{text-align:center}
+      .rs-ct .rs-ct__p{margin-inline:auto;font-size:16.5px}
+      .rs-ct h2.rs-ct__h{font-size:30px}
+      .rs-ct .rs-ct__p{font-size:15.5px;line-height:1.6;margin-top:14px}
+      .rs-ct__pts{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;margin-top:16px}
+      .rs-ct__pts li{gap:5px;font-size:13.5px;color:#dfe3d2}
+      .rs-ct__pts li i{width:16px;height:16px;border-radius:5px;box-shadow:none}
+      .rs-ct__pts li i svg{width:10px;height:10px}
+      .rs-ct__txt>.rs-ct__alt{display:none}
+      .rs-ct__alt--m{display:flex!important;justify-content:center;gap:8px 16px;margin-top:6px;padding-top:18px;font-size:14px}
+      .rs-ct__body{padding:28px 18px 24px;border-radius:21px}
+      .rs-ct__card{border-radius:22px}
+      .rs-ct form.rs-ct__form{grid-template-columns:1fr}
+      .rs-ct__opt span{padding:14px 12px;font-size:14.5px;gap:9px}
+      .rs-ct__opt span svg{width:22px;height:22px}
+    }
+    @media (hover:none),(max-width:980px){
+      .rs-ct__stage{perspective:none}
+      .rs-ct__card{transform:translateY(24px)}
+      .rs-ct.is-in .rs-ct__card,.rs-ct.is-tilt .rs-ct__card{transform:none}
+    }
+    @media (prefers-reduced-motion:reduce){.rs-ic .d{stroke-dashoffset:0;transition:none}.rs-ic .aw,.rs-ic .dr,.rs-ic .b,.rs-ic .ar{animation:none!important}.rs-ct .rs-ct__txt,.rs-ct .rs-ct__card{opacity:1;transform:none;transition:none}.rs-ct__go .sp{animation-duration:1.4s}}
+  </style>
+  <div id="form" class="rs-ct__anchor" aria-hidden="true"></div><div class="rs-ct__glow" aria-hidden="true"></div>
+  <div class="rs-ct__in">
+    <div class="rs-ct__txt">
+      <p class="rs-ct__k">שיחת ייעוץ ראשונית</p>
+      <h2 class="rs-ct__h">בואו נדבר על <em>החנות שלכם.</em></h2>
+      <p class="rs-ct__p">השאירו פרטים ואחזור אליכם באופן אישי. נבדוק יחד מה באמת מתאים לעסק שלכם, בלי התחייבות.</p>
+      <ul class="rs-ct__pts">
+        <li><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>מענה אישי ממני</li>
+        <li><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>בלי התחייבות</li>
+        <li><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>המידע נשאר חסוי</li>
+      </ul>
+      <div class="rs-ct__alt"><span>מעדיפים לדבר ישר?</span><a href="https://wa.me/972527460037" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>שיחה בוואטסאפ</a><a href="tel:0527460037" dir="ltr">052-7460037</a></div>
+    </div>
+    <div class="rs-ct__stage"><div class="rs-ct__card"><div class="rs-ct__body">
+      <div class="rs-ct__prog" aria-hidden="true"><i></i></div>
+      <form class="rs-ct__form" novalidate>
+        <div class="rs-ct__full" role="radiogroup" aria-labelledby="rs-ct-lg"><span class="rs-ct__lg" id="rs-ct-lg">מה מעניין אתכם?</span><div class="rs-ct__opts"><label class="rs-ct__opt"><input type="radio" name="rs-ct-int" value="בניית חנות ווקומרס"><span><svg class="rs-ic rs-ic--shop" viewBox="0 0 24 24" aria-hidden="true"><path class="d" pathLength="1" style="--i:0" d="M4 9.500v10h16v-10"/><path class="d" pathLength="1" style="--i:1" d="M4 9.500 5.300 4.500h13.400L20 9.500"/><path class="d aw" pathLength="1" style="--i:2" d="M4 9.500c0 1.500 1.200 2.500 2.700 2.500s2.600-1 2.600-2.500c0 1.500 1.200 2.500 2.700 2.500s2.700-1 2.700-2.500c0 1.500 1.100 2.500 2.600 2.500S20 11 20 9.500"/><path class="d dr" pathLength="1" style="--i:3" d="M10 19.500v-4.500h4v4.500"/></svg>חנות חדשה</span></label><label class="rs-ct__opt"><input type="radio" name="rs-ct-int" value="שיפור המרות לחנות"><span><svg class="rs-ic rs-ic--grow" viewBox="0 0 24 24" aria-hidden="true"><path class="d" pathLength="1" style="--i:0" d="M4 19.500h16"/><path class="d b" pathLength="1" style="--i:1" d="M6.500 16v-4"/><path class="d b" pathLength="1" style="--i:2" d="M11 16V8.500"/><path class="d b" pathLength="1" style="--i:3" d="M15.500 16v-6"/><g class="ar"><path class="d" pathLength="1" style="--i:4" d="M19 5.500l-6.500 6"/><path class="d" pathLength="1" style="--i:5" d="M14 5.500h5v5"/></g></svg>שיפור חנות קיימת</span></label></div></div>
+        <div class="rs-ct__f rs-ct__full" data-f="name"><input class="rs-ct__i" id="rs-ct-name" type="text" autocomplete="name" placeholder=" "><label class="rs-ct__l" for="rs-ct-name">שם מלא</label><div class="rs-ct__e"></div></div>
+        <div class="rs-ct__f" data-f="phone"><input class="rs-ct__i is-ltr" id="rs-ct-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder=" " required><label class="rs-ct__l" for="rs-ct-phone">טלפון</label><div class="rs-ct__e"></div></div>
+        <div class="rs-ct__f" data-f="email"><input class="rs-ct__i is-ltr" id="rs-ct-email" type="email" inputmode="email" autocomplete="email" placeholder=" " required><label class="rs-ct__l" for="rs-ct-email">מייל</label><div class="rs-ct__e"></div></div>
+        <div class="rs-ct__f rs-ct__full" data-f="message"><textarea class="rs-ct__i" id="rs-ct-msg" rows="3" placeholder=" "></textarea><label class="rs-ct__l" for="rs-ct-msg">כמה מילים על החנות (לא חובה)</label><div class="rs-ct__e"></div></div>
+        <div class="rs-ct__full"><label class="rs-ct__ok" data-f="field_0852e48"><input type="checkbox" id="rs-ct-ok" required><b><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.500l3.200 3.200L13 5" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg></b><span>אני מאשר/ת כי קראתי את <a href="https://ranshtam.com/privacy-policy/" target="_blank" rel="noopener">מדיניות הפרטיות</a> של האתר.</span></label></div>
+        <div class="rs-ct__msg" role="alert"></div>
+        <div class="rs-ct__full"><button class="rs-ct__go" type="submit"><span class="rs-ct__gt">לקבלת שיחת ייעוץ ראשונית</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3m4-4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><i class="sp" aria-hidden="true"></i></button></div><div class="rs-ct__full rs-ct__alt rs-ct__alt--m"><span>מעדיפים לדבר ישר?</span><a href="https://wa.me/972527460037" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>שיחה בוואטסאפ</a><a href="tel:0527460037" dir="ltr">052-7460037</a></div>
+      </form>
+      <div class="rs-ct__done" role="status" aria-live="polite"><div class="rs-ct__ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M5 12.500l4.500 4.500L19 7.500"/></svg></div><h3>קיבלתי, תודה.</h3><p>אחזור אליכם באופן אישי בהקדם. אם זה דחוף, אפשר גם לכתוב לי בוואטסאפ.</p></div>
+    </div></div></div>
+  </div>
+  <script nowprocket data-nowprocket="1">
+  (function(){
+    var s=document.currentScript, sec=(s?s.closest:0)?s.closest('.rs-ct'):null;
+    if(!sec){var all=document.querySelectorAll('.rs-ct');sec=all[all.length-1];}
+    if(!sec)return; if(sec.dataset.rsInit)return; sec.dataset.rsInit='1';
+    var card=sec.querySelector('.rs-ct__card'), body=sec.querySelector('.rs-ct__body'), form=sec.querySelector('.rs-ct__form'), msg=sec.querySelector('.rs-ct__msg'), prog=sec.querySelector('.rs-ct__prog'), gt=sec.querySelector('.rs-ct__gt');
+    var el={name:sec.querySelector('#rs-ct-name'),phone:sec.querySelector('#rs-ct-phone'),email:sec.querySelector('#rs-ct-email'),message:sec.querySelector('#rs-ct-msg'),ok:sec.querySelector('#rs-ct-ok')};
+    var red=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)').matches:false, fine=window.matchMedia?window.matchMedia('(hover: hover) and (pointer: fine)').matches:false;
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){sec.classList.add('is-in');io.disconnect();setTimeout(function(){sec.classList.add('is-tilt');},1100);}},{threshold:.15});io.observe(sec);}else{sec.classList.add('is-in');}
+    var raf=0,px=.5,py=0;
+    function paint(){raf=0;card.style.setProperty('--gx',(px*100).toFixed(1)+'%');card.style.setProperty('--gy',(py*100).toFixed(1)+'%');body.style.setProperty('--gx',(px*100).toFixed(1)+'%');body.style.setProperty('--gy',(py*100).toFixed(1)+'%');if(fine){if(!red){card.style.setProperty('--rx',((.5-py)*4).toFixed(2)+'deg');card.style.setProperty('--ry',((px-.5)*5).toFixed(2)+'deg');}}}
+    card.addEventListener('pointermove',function(e){var r=card.getBoundingClientRect();px=(e.clientX-r.left)/Math.max(1,r.width);py=(e.clientY-r.top)/Math.max(1,r.height);if(!raf)raf=requestAnimationFrame(paint);},{passive:true});
+    card.addEventListener('pointerleave',function(){card.style.setProperty('--rx','0deg');card.style.setProperty('--ry','0deg');},{passive:true});
+    var CFG={post:'22157',form:'8d37214',q:'22157',ref:'home'};
+    /* Inner pages: take over the page's own Elementor form (ids, options, texts) and retire the old block. */
+    (function(){
+      var oldF=document.querySelector('.rs-form-card form.elementor-form'); if(!oldF)return;
+      function v(n){var i=oldF.querySelector('input[name="'+n+'"]');return i?i.value:'';}
+      CFG.post=v('post_id')||CFG.post; CFG.form=v('form_id')||CFG.form; CFG.q=v('queried_id')||CFG.post; CFG.ref=v('form_fields[ref]')||'website';
+      var card=oldF.closest('.rs-form-card'), wrap=card?card.closest('.e-con.e-parent'):null, sel=oldF.querySelector('select'), opts=sec.querySelector('.rs-ct__opts');
+      if(sel){ var html=''; [].forEach.call(sel.options,function(o){ if(!o.value)return; var l=document.createElement('label'); l.className='rs-ct__opt'; var i=document.createElement('input'); i.type='radio'; i.name='rs-ct-int'; i.value=o.value; if(o.selected)i.setAttribute('checked','checked'); var sp=document.createElement('span'); sp.textContent=o.textContent.trim(); l.appendChild(i); l.appendChild(sp); html+=l.outerHTML; }); if(html){opts.innerHTML=html;opts.classList.add('is-chips');} }
+      if(card){
+        var h=card.querySelector('h2,h3,.elementor-heading-title:not(p)'), ps=card.querySelectorAll('.elementor-widget-text-editor p, .elementor-widget-heading p'), t, pre='בואו נדבר על ', H=sec.querySelector('.rs-ct__h'), P=sec.querySelector('.rs-ct__p');
+        [].forEach.call(card.querySelectorAll('.elementor-heading-title'),function(e){var x=e.textContent.trim();if(x.indexOf('//')===0)return;if(!t){if(x.length>8)t=x;}});
+        if(t){H.textContent='';if(t.indexOf(pre)===0){H.appendChild(document.createTextNode(pre));var em=document.createElement('em');em.textContent=t.slice(pre.length);H.appendChild(em);}else{H.textContent=t;}}
+        var long=''; [].forEach.call(card.querySelectorAll('p,.elementor-widget-text-editor'),function(e){var x=e.textContent.trim();if(x.indexOf('//')===0)return;if(x===t)return;if(!long){if(x.length>40)long=x;}}); if(long)P.textContent=long;
+        if(CFG.post!=='25949'){var ml=sec.querySelector('label[for="rs-ct-msg"]');if(ml)ml.textContent='כמה מילים על מה שאתם צריכים (לא חובה)';}
+        if(card.id==='form')card.removeAttribute('id');
+      }
+      if(wrap){wrap.style.display='none';}else if(card){card.style.display='none';}
+      if(location.hash==='#form'){setTimeout(function(){sec.scrollIntoView({block:'start'});},300);}
+    })();
+    function interest(){var r=form.querySelector('input[name="rs-ct-int"]:checked');return r?r.value:'';}
+    function digits(v){return String(v||'').replace(/[^0-9+]/g,'');}
+    function progress(){var n=0;if(interest())n++;if(el.name.value.trim())n++;if(digits(el.phone.value).length>8)n++;if(/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.email.value.trim()))n++;if(el.ok.checked)n++;prog.style.setProperty('--pg',(n/5).toFixed(2));}
+    function setErr(k,t){var w=form.querySelector('[data-f="'+k+'"]');if(!w)return false;w.classList.toggle('is-err',!!t);var p=w.querySelector('.rs-ct__e');if(p)p.textContent=t||'';return true;}
+    function clearAll(){['name','phone','email','message','field_0852e48'].forEach(function(k){setErr(k,'');});msg.classList.remove('is-on');msg.textContent='';}
+    form.addEventListener('input',function(e){var w=e.target.closest('[data-f]');if(w)setErr(w.getAttribute('data-f'),'');progress();});
+    form.addEventListener('change',progress);
+    form.addEventListener('submit',function(e){
+      e.preventDefault(); if(form.classList.contains('is-busy'))return; clearAll();
+      var ph=digits(el.phone.value), em=el.email.value.trim(), bad=null;
+      if(ph.length<9){setErr('phone','צריך מספר טלפון תקין');bad=bad||el.phone;}
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){setErr('email','צריך כתובת מייל תקינה');bad=bad||el.email;}
+      if(!el.ok.checked){setErr('field_0852e48','x');bad=bad||el.ok;}
+      if(bad){bad.focus();return;}
+      var fd=new FormData();
+      fd.append('action','elementor_pro_forms_send_form');fd.append('post_id',CFG.post);fd.append('form_id',CFG.form);fd.append('queried_id',CFG.q);fd.append('referer_title',document.title);fd.append('referrer',location.href);
+      fd.append('form_fields[name]',el.name.value.trim());fd.append('form_fields[email]',em);fd.append('form_fields[phone]',ph);fd.append('form_fields[interestedabout]',interest());fd.append('form_fields[message]',el.message.value.trim());fd.append('form_fields[ref]',CFG.ref);fd.append('form_fields[field_0852e48]','on');
+      form.classList.add('is-busy'); var keep=gt.textContent; gt.textContent='שולח';
+      function fail(t){form.classList.remove('is-busy');gt.textContent=keep;msg.textContent=t;msg.classList.add('is-on');}
+      fetch('/wp-admin/admin-ajax.php',{method:'POST',body:fd,credentials:'same-origin'}).then(function(r){return r.json();}).then(function(j){
+        if(j.success){form.classList.remove('is-busy');body.classList.add('is-done');prog.style.setProperty('--pg','1');sec.scrollIntoView({block:'center',behavior:red?'auto':'smooth'});var ru=((j.data||{}).data||{}).redirect_url;if(ru){setTimeout(function(){window.location.href=ru;},1400);}return;}
+        var er=(j.data?j.data.errors:null)||{},any=false,map={phone:'צריך מספר טלפון תקין, ספרות בלבד',email:'צריך כתובת מייל תקינה',field_0852e48:'x'};
+        Object.keys(er).forEach(function(k){if(!k)return;if(setErr(k,map[k]||er[k]))any=true;});
+        fail(any?'יש שדה שצריך לתקן.':'השליחה לא הצליחה. אפשר לנסות שוב או לכתוב לי בוואטסאפ.');
+      }).catch(function(){fail('השליחה לא הצליחה. אפשר לנסות שוב או לכתוב לי בוואטסאפ.');});
+    });
+    sec.__ct={fill:function(o){Object.keys(o).forEach(function(k){if(el[k]){if(k==='ok')el[k].checked=!!o[k];else el[k].value=o[k];}});progress();},done:function(){body.classList.add('is-done');}};
+  })();
+  </script>
+</section>
 RS_HTML_9X;
 }, 5 );
 add_action( 'elementor/theme/after_do_footer', function () {

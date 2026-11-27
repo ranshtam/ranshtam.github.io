@@ -31,6 +31,9 @@ w=open(H+'wa.html',encoding='utf8').read()
 open('g-footer.html','w',encoding='utf8').write(f.rstrip()+'\n'+w)
 for n in ['g-header.html','g-footer.html']:
     t=open(n,encoding='utf8').read(); assert 'RS_HTML_9X' not in t; print(n,len(t),'local anchors left:',re.findall(r'href="#[a-z]*"',t))
+c=open(H+'contact.html',encoding='utf8').read()
+assert 'RS_HTML_9X' not in c
+open('g-contact.html','w',encoding='utf8').write(c)
 # ---- php snippet
 php='''/**
  * RS Global Header & Footer (RS Dark Lime), 2026-11-27.
@@ -45,6 +48,7 @@ add_filter( 'rocket_rucss_inline_content_exclusions', function ( $list ) {
 	$list[] = '.rs-hd{';
 	$list[] = '.rs-ft{';
 	$list[] = '.rs-waf{';
+	$list[] = '.rs-ct{';
 	return $list;
 } );
 function rs_global_chrome_skip() {
@@ -64,6 +68,14 @@ add_action( 'elementor/theme/before_do_header', function () {
 @@HEADER@@
 RS_HTML_9X;
 }, 5 );
+add_action( 'elementor/theme/before_do_footer', function () {
+	if ( rs_global_chrome_skip() || ! is_page( array( 25384, 25949, 25919 ) ) ) {
+		return;
+	}
+	echo <<<'RS_HTML_9X'
+@@CONTACT@@
+RS_HTML_9X;
+}, 5 );
 add_action( 'elementor/theme/after_do_footer', function () {
 	if ( rs_global_chrome_skip() ) {
 		return;
@@ -72,5 +84,5 @@ add_action( 'elementor/theme/after_do_footer', function () {
 @@FOOTER@@
 RS_HTML_9X;
 }, 50 );
-'''.replace('@@HEADER@@',open('g-header.html',encoding='utf8').read().rstrip()).replace('@@FOOTER@@',open('g-footer.html',encoding='utf8').read().rstrip())
+'''.replace('@@CONTACT@@',open('g-contact.html',encoding='utf8').read().rstrip()).replace('@@HEADER@@',open('g-header.html',encoding='utf8').read().rstrip()).replace('@@FOOTER@@',open('g-footer.html',encoding='utf8').read().rstrip())
 open('snippet.php','w',encoding='utf8').write(php); print('snippet',len(php))

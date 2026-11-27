@@ -36,6 +36,9 @@
     .rs-ct .rs-ct__lg{display:block;font-size:14px;font-weight:600;color:#dfe3d2;margin:0 0 10px;padding:0}
     .rs-ct__opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
     .rs-ct__opt{position:relative;display:block;cursor:pointer;margin:0}
+    .rs-ct__opts.is-chips{display:flex;flex-wrap:wrap;gap:8px}
+    .rs-ct__opts.is-chips .rs-ct__opt span{padding:10px 16px;border-radius:999px;font-size:14.5px;font-weight:500}
+    .e-con.e-parent:has(.rs-form-card form.elementor-form){display:none!important}
     .rs-ct .rs-ct__opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
     .rs-ct__opt span{display:flex;align-items:center;gap:12px;height:100%;padding:16px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.035);color:#fff;font-size:15.5px;font-weight:600;line-height:1.3;transition:border-color .25s,background .25s,transform .25s cubic-bezier(.2,.9,.3,1.5),box-shadow .25s}
     .rs-ct__opt span svg{flex:none;width:26px;height:26px;fill:none;stroke:rgba(255,255,255,.6);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
@@ -177,6 +180,25 @@
     function paint(){raf=0;card.style.setProperty('--gx',(px*100).toFixed(1)+'%');card.style.setProperty('--gy',(py*100).toFixed(1)+'%');body.style.setProperty('--gx',(px*100).toFixed(1)+'%');body.style.setProperty('--gy',(py*100).toFixed(1)+'%');if(fine){if(!red){card.style.setProperty('--rx',((.5-py)*4).toFixed(2)+'deg');card.style.setProperty('--ry',((px-.5)*5).toFixed(2)+'deg');}}}
     card.addEventListener('pointermove',function(e){var r=card.getBoundingClientRect();px=(e.clientX-r.left)/Math.max(1,r.width);py=(e.clientY-r.top)/Math.max(1,r.height);if(!raf)raf=requestAnimationFrame(paint);},{passive:true});
     card.addEventListener('pointerleave',function(){card.style.setProperty('--rx','0deg');card.style.setProperty('--ry','0deg');},{passive:true});
+    var CFG={post:'22157',form:'8d37214',q:'22157',ref:'home'};
+    /* Inner pages: take over the page's own Elementor form (ids, options, texts) and retire the old block. */
+    (function(){
+      var oldF=document.querySelector('.rs-form-card form.elementor-form'); if(!oldF)return;
+      function v(n){var i=oldF.querySelector('input[name="'+n+'"]');return i?i.value:'';}
+      CFG.post=v('post_id')||CFG.post; CFG.form=v('form_id')||CFG.form; CFG.q=v('queried_id')||CFG.post; CFG.ref=v('form_fields[ref]')||'website';
+      var card=oldF.closest('.rs-form-card'), wrap=card?card.closest('.e-con.e-parent'):null, sel=oldF.querySelector('select'), opts=sec.querySelector('.rs-ct__opts');
+      if(sel){ var html=''; [].forEach.call(sel.options,function(o){ if(!o.value)return; var l=document.createElement('label'); l.className='rs-ct__opt'; var i=document.createElement('input'); i.type='radio'; i.name='rs-ct-int'; i.value=o.value; if(o.selected)i.setAttribute('checked','checked'); var sp=document.createElement('span'); sp.textContent=o.textContent.trim(); l.appendChild(i); l.appendChild(sp); html+=l.outerHTML; }); if(html){opts.innerHTML=html;opts.classList.add('is-chips');} }
+      if(card){
+        var h=card.querySelector('h2,h3,.elementor-heading-title:not(p)'), ps=card.querySelectorAll('.elementor-widget-text-editor p, .elementor-widget-heading p'), t, pre='בואו נדבר על ', H=sec.querySelector('.rs-ct__h'), P=sec.querySelector('.rs-ct__p');
+        [].forEach.call(card.querySelectorAll('.elementor-heading-title'),function(e){var x=e.textContent.trim();if(x.indexOf('//')===0)return;if(!t){if(x.length>8)t=x;}});
+        if(t){H.textContent='';if(t.indexOf(pre)===0){H.appendChild(document.createTextNode(pre));var em=document.createElement('em');em.textContent=t.slice(pre.length);H.appendChild(em);}else{H.textContent=t;}}
+        var long=''; [].forEach.call(card.querySelectorAll('p,.elementor-widget-text-editor'),function(e){var x=e.textContent.trim();if(x.indexOf('//')===0)return;if(x===t)return;if(!long){if(x.length>40)long=x;}}); if(long)P.textContent=long;
+        if(CFG.post!=='25949'){var ml=sec.querySelector('label[for="rs-ct-msg"]');if(ml)ml.textContent='כמה מילים על מה שאתם צריכים (לא חובה)';}
+        if(card.id==='form')card.removeAttribute('id');
+      }
+      if(wrap){wrap.style.display='none';}else if(card){card.style.display='none';}
+      if(location.hash==='#form'){setTimeout(function(){sec.scrollIntoView({block:'start'});},300);}
+    })();
     function interest(){var r=form.querySelector('input[name="rs-ct-int"]:checked');return r?r.value:'';}
     function digits(v){return String(v||'').replace(/[^0-9+]/g,'');}
     function progress(){var n=0;if(interest())n++;if(el.name.value.trim())n++;if(digits(el.phone.value).length>8)n++;if(/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.email.value.trim()))n++;if(el.ok.checked)n++;prog.style.setProperty('--pg',(n/5).toFixed(2));}
@@ -192,12 +214,12 @@
       if(!el.ok.checked){setErr('field_0852e48','x');bad=bad||el.ok;}
       if(bad){bad.focus();return;}
       var fd=new FormData();
-      fd.append('action','elementor_pro_forms_send_form');fd.append('post_id','22157');fd.append('form_id','8d37214');fd.append('queried_id','22157');fd.append('referer_title',document.title);fd.append('referrer',location.href);
-      fd.append('form_fields[name]',el.name.value.trim());fd.append('form_fields[email]',em);fd.append('form_fields[phone]',ph);fd.append('form_fields[interestedabout]',interest());fd.append('form_fields[message]',el.message.value.trim());fd.append('form_fields[ref]','hero-v14');fd.append('form_fields[field_0852e48]','on');
+      fd.append('action','elementor_pro_forms_send_form');fd.append('post_id',CFG.post);fd.append('form_id',CFG.form);fd.append('queried_id',CFG.q);fd.append('referer_title',document.title);fd.append('referrer',location.href);
+      fd.append('form_fields[name]',el.name.value.trim());fd.append('form_fields[email]',em);fd.append('form_fields[phone]',ph);fd.append('form_fields[interestedabout]',interest());fd.append('form_fields[message]',el.message.value.trim());fd.append('form_fields[ref]',CFG.ref);fd.append('form_fields[field_0852e48]','on');
       form.classList.add('is-busy'); var keep=gt.textContent; gt.textContent='שולח';
       function fail(t){form.classList.remove('is-busy');gt.textContent=keep;msg.textContent=t;msg.classList.add('is-on');}
       fetch('/wp-admin/admin-ajax.php',{method:'POST',body:fd,credentials:'same-origin'}).then(function(r){return r.json();}).then(function(j){
-        if(j.success){form.classList.remove('is-busy');body.classList.add('is-done');prog.style.setProperty('--pg','1');sec.scrollIntoView({block:'center',behavior:red?'auto':'smooth'});return;}
+        if(j.success){form.classList.remove('is-busy');body.classList.add('is-done');prog.style.setProperty('--pg','1');sec.scrollIntoView({block:'center',behavior:red?'auto':'smooth'});var ru=((j.data||{}).data||{}).redirect_url;if(ru){setTimeout(function(){window.location.href=ru;},1400);}return;}
         var er=(j.data?j.data.errors:null)||{},any=false,map={phone:'צריך מספר טלפון תקין, ספרות בלבד',email:'צריך כתובת מייל תקינה',field_0852e48:'x'};
         Object.keys(er).forEach(function(k){if(!k)return;if(setErr(k,map[k]||er[k]))any=true;});
         fail(any?'יש שדה שצריך לתקן.':'השליחה לא הצליחה. אפשר לנסות שוב או לכתוב לי בוואטסאפ.');
