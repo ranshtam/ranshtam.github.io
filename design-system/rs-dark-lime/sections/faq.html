@@ -23,7 +23,9 @@
     .rs-faq__q[open] summary i{background:#CAFC01;border-color:#CAFC01;transform:rotate(180deg)}
     .rs-faq__q[open] summary i::before,.rs-faq__q[open] summary i::after{background:#101400}
     .rs-faq__q[open] summary i::after{transform:rotate(0deg)}
-    .rs-faq__a{padding:0 24px 24px;font-size:16.5px;line-height:1.75;color:#c9cdbb;animation:rs-faq-in .35s ease}
+    .rs-faq__a{padding:0 24px 24px;font-size:16.5px;line-height:1.75;color:#e9ecdf;animation:rs-faq-in .35s ease}
+    .rs-faq__a .w{color:rgba(255,255,255,.3);transition:color .3s ease}
+    .rs-faq__a.is-fill .w{color:#e9ecdf}
     @keyframes rs-faq-in{from{opacity:0;transform:translateY(-6px)}}
     @media (max-width:980px){
       .rs-faq{padding:64px 0}
@@ -32,7 +34,7 @@
       .rs-faq__q summary{padding:18px 18px;font-size:16px}
       .rs-faq__a{padding:0 18px 20px;font-size:15.5px}
     }
-    @media (prefers-reduced-motion:reduce){.rs-faq .rs-faq__q{opacity:1;transform:none;transition:none}.rs-faq__a{animation:none}}
+    @media (prefers-reduced-motion:reduce){.rs-faq .rs-faq__q{opacity:1;transform:none;transition:none}.rs-faq__a{animation:none}.rs-faq__a .w{color:#e9ecdf;transition:none}}
   </style>
   <div class="rs-faq__in">
     <div class="rs-faq__head"><p class="rs-faq__k">שאלות נפוצות</p><h2 class="rs-faq__h">מה שכדאי לדעת <em>לפני שמתחילים.</em></h2></div>
@@ -43,7 +45,23 @@
     var s=document.currentScript, sec=(s?s.closest:0)?s.closest('.rs-faq'):null;
     if(!sec){var all=document.querySelectorAll('.rs-faq');sec=all[all.length-1];}
     if(!sec)return; if(sec.dataset.rsInit)return; sec.dataset.rsInit='1';
-    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){sec.classList.add('is-in');io.disconnect();}},{threshold:.12});io.observe(sec);}else{sec.classList.add('is-in');}
+    var red=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)').matches:false, seen=false;
+    function split(a){
+      if(a.dataset.split)return a.querySelectorAll('.w'); a.dataset.split='1';
+      var parts=a.textContent.split(/(\s+)/), frag=document.createDocumentFragment();
+      parts.forEach(function(p){ if(!p)return; if(/^\s+$/.test(p)){frag.appendChild(document.createTextNode(p));return;} var w=document.createElement('span'); w.className='w'; w.textContent=p; frag.appendChild(w); });
+      a.textContent=''; a.appendChild(frag); return a.querySelectorAll('.w');
+    }
+    function fill(d){
+      if(red)return; var a=d.querySelector('.rs-faq__a'); if(!a)return;
+      var ws=split(a), n=ws.length, step=Math.min(22,700/Math.max(1,n));
+      a.classList.remove('is-fill'); [].forEach.call(ws,function(w,i){w.style.transitionDelay=(i*step).toFixed(0)+'ms';});
+      void a.offsetWidth; requestAnimationFrame(function(){a.classList.add('is-fill');});
+    }
+    [].forEach.call(sec.querySelectorAll('.rs-faq__q'),function(d){ d.addEventListener('toggle',function(){ if(d.open){ if(seen)fill(d); } }); });
+    if(!red){[].forEach.call(sec.querySelectorAll('.rs-faq__q[open] .rs-faq__a'),split);}
+    function firstFill(){ seen=true; [].forEach.call(sec.querySelectorAll('.rs-faq__q[open]'),fill); }
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){sec.classList.add('is-in');io.disconnect();setTimeout(firstFill,250);}},{threshold:.12});io.observe(sec);}else{sec.classList.add('is-in');firstFill();}
   })();
   </script>
 </section>
