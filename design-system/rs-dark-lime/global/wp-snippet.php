@@ -12,6 +12,7 @@ add_filter( 'rocket_rucss_inline_content_exclusions', function ( $list ) {
 	$list[] = '.rs-ft{';
 	$list[] = '.rs-waf{';
 	$list[] = '.rs-ct{';
+	$list[] = 'rs-skin:';
 	return $list;
 } );
 function rs_global_chrome_skip() {
@@ -23,6 +24,51 @@ function rs_global_chrome_skip() {
 	}
 	return false;
 }
+add_action( 'wp_head', function () {
+	if ( rs_global_chrome_skip() || ! is_page( array( 25384, 25949, 25919 ) ) ) {
+		return;
+	}
+	echo <<<'RS_HTML_9X'
+<style id="rs-skin">
+/* rs-skin: RS Dark Lime over the Elementor service pages */
+body:is(.page-id-25384,.page-id-25949,.page-id-25919){background:#101400!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"]{color:#c9cdbb;background:radial-gradient(900px 520px at 50% 0,rgba(202,252,1,.07),rgba(202,252,1,0) 70%)}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] :is(h1,h2,h3,h4,h5,h6,.elementor-heading-title,.elementor-icon-box-title,.elementor-icon-box-title a,.elementor-tab-title,.elementor-toggle-title){color:#fff!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] :is(p,li,.elementor-icon-list-text,.elementor-icon-box-description,.elementor-widget-text-editor,.elementor-tab-content){color:#c9cdbb!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .ph-mark{color:#CAFC01!important;background:none!important;box-shadow:none!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] :is(.ph-h2,.ph-line){color:#fff!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .ph-line.ph-3{color:#9aa08a!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-3402f10,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-db7b0c8,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-32fc803,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-d69d525,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-50f9955{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025))!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 22px 50px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.1)!important;transition:border-color .3s,transform .3s}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-3402f10:hover,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-db7b0c8:hover,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-32fc803:hover,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-d69d525:hover{border-color:rgba(202,252,1,.45)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-90debad{background:linear-gradient(180deg,#1b210b,#12160a)!important;border:1px solid rgba(202,252,1,.45)!important;box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 0 4px rgba(202,252,1,.06),inset 0 1px 0 rgba(255,255,255,.12)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-d28cf11 :is(.elementor-heading-title,p,span){color:#101400!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-icon-box-icon .elementor-icon{background:rgba(202,252,1,.12)!important;box-shadow:inset 0 0 0 1px rgba(202,252,1,.4)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-widget-icon-list{border-color:rgba(255,255,255,.14)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-icon-list-item:not(:last-child)::after{border-color:rgba(255,255,255,.12)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-ddf114a a.elementor-button{background:rgba(255,255,255,.05)!important;border-color:rgba(255,255,255,.26)!important;color:#fff!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-ddf114a a.elementor-button :is(span,svg){color:#fff!important;fill:#fff!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-ddf114a a.elementor-button:hover{border-color:rgba(202,252,1,.6)!important;background:rgba(255,255,255,.09)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-c1ab087 a.elementor-button{background:transparent!important;border:1px solid rgba(202,252,1,.6)!important;color:#CAFC01!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-c1ab087 a.elementor-button :is(span,svg){color:#CAFC01!important;fill:#CAFC01!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-c1ab087 a.elementor-button:hover{background:#CAFC01!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-element-c1ab087 a.elementor-button:hover :is(span,svg){color:#101400!important;fill:#101400!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-toggle-item{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02))!important;border-color:rgba(255,255,255,.12)!important;transition:border-color .3s}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-toggle-item:has(.elementor-tab-title.elementor-active){border-color:rgba(202,252,1,.4)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-toggle-icon{background:rgba(255,255,255,.05)!important;border-color:rgba(255,255,255,.22)!important;color:#fff!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-toggle-icon :is(svg,i){fill:#fff!important;color:#fff!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-tab-title.elementor-active .elementor-toggle-icon{background:#CAFC01!important;border-color:#CAFC01!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-tab-title.elementor-active .elementor-toggle-icon :is(svg,i){fill:#101400!important;color:#101400!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] .elementor-tab-title a{color:#fff!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-review-item .ti-inner{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.03))!important;background-color:transparent!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:20px!important;box-shadow:0 18px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.1)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-review-item .ti-inner::before,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-review-item .ti-inner::after{display:none!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-name,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-review-content,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-review-text-container,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-review-content *{color:#fff!important;font-family:var(--tal)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-date,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-read-more,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-read-more span{color:#a9af98!important;font-family:var(--tal)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-read-more span:hover{color:#CAFC01!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-controls .ti-next,body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-controls .ti-prev{filter:invert(1);box-shadow:0 0 0 1px rgba(0,0,0,.25)!important}
+body:is(.page-id-25384,.page-id-25949,.page-id-25919) [data-elementor-type="wp-page"] #reviews .ti-widget .ti-review-item .ti-profile-img{display:none!important}
+</style>
+RS_HTML_9X;
+}, 99 );
 add_action( 'elementor/theme/before_do_header', function () {
 	if ( rs_global_chrome_skip() ) {
 		return;
