@@ -36,7 +36,7 @@
     if('IntersectionObserver' in window){
       var vis=0, small=window.matchMedia('(max-width:980px)');
       var io=new IntersectionObserver(function(en){en.forEach(function(e){vis+=e.isIntersecting?1:-1;});if(vis<0)vis=0;w.classList.toggle('is-off',small.matches?vis>0:false);},{threshold:.15});
-      [].forEach.call(document.querySelectorAll('.rs-audit__form,.rs-ct__form'),function(el){io.observe(el);});
+      [].forEach.call(document.querySelectorAll('.rs-audit__form,.rs-ct__form,form.elementor-form'),function(el){io.observe(el);});
     }
   })();
   </script>
