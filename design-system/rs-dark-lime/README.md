@@ -14,6 +14,7 @@
 | `sections/leak.html` | משפך דולף בתלת-ממד שנסתם בגלילה (canvas) |
 | `sections/body-sections.html` | שירותים, ביקורות (Trustindex בעיצוב כהה), פרויקטים (מוקאפ דפדפן וטלפון ב-CSS), תהליך עבודה עם פולס אור, קצת עלי |
 | `sections/audit.html` | כרטיס זכוכית בתלת-ממד עם שדה אחד ושליחה לוואטסאפ |
+| `sections/faq.html` | שאלות נפוצות באקורדיון (`details`) עם נתונים מובנים `FAQPage` |
 | `sections/contact.html` | טופס לידים: בחירה בכרטיסים, תוויות צפות, פס התקדמות, מצב הצלחה מונפש |
 | `sections/footer.html` | פוטר |
 | `build/` | סקריפטי הבנייה (`build.py`, `rest.py`) וקובצי המקור שהם צריכים |

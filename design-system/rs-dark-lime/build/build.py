@@ -14,7 +14,7 @@ def line(words):
     for w in words:
         ls=''.join('<span class="rs-l" style="--i:%d">%s</span>'%(i[0]+k,ch) for k,ch in enumerate(w)); i[0]+=len(w); out.append('<span class="rs-w">%s</span>'%ls)
     return ' '.join(out)
-h1='<h1 class="rs-h1" aria-label="חנויות אינטרנטיות שמוכרות ולא רק נראות טוב."><span class="l1" aria-hidden="true">%s</span><span class="l2" aria-hidden="true">%s</span></h1>'%(line(['חנויות','אינטרנטיות','שמוכרות']),line(['ולא','רק','נראות','טוב.']))
+h1='<h1 class="rs-h1" aria-label="חנויות אינטרנטיות שמוכרות ולא רק נראות טוב."><span class="l1" aria-hidden="true">%s</span> <span class="l2" aria-hidden="true">%s</span></h1>'%(line(['חנויות','אינטרנטיות','שמוכרות']),line(['ולא','רק','נראות','טוב.']))
 s=sub1(r'<h1 class="rs-h1".*?</h1>',h1,s)
 # stage
 B,D,G=' is-b','',' is-g'
@@ -100,10 +100,11 @@ s=sub1(r'<p class="rs-hero__sub">.*?</p>','<p class="rs-hero__sub">'+' '.join(_g
 s=sub1(r'\s*<p class="rs-hero__note">.*?</p>','',s)
 s=open('header.html',encoding='utf8').read().rstrip()+'\n'+s.lstrip()
 s=s.rstrip()+'\n'+open('leak.html',encoding='utf8').read()
+s=s.rstrip()+'\n'+open('audit.html',encoding='utf8').read()
 import subprocess as _sp
 _sp.run(['python3','rest.py',BASE],check=True)
 s=s.rstrip()+'\n'+open('rest.html',encoding='utf8').read()
-s=s.rstrip()+'\n'+open('audit.html',encoding='utf8').read()
+s=s.rstrip()+'\n'+open('faq.html',encoding='utf8').read()
 s=s.rstrip()+'\n'+open('contact.html',encoding='utf8').read()
 s=s.rstrip()+'\n'+open('footer.tpl.html',encoding='utf8').read().replace('@@MAIL@@',open('.mail.txt').read().strip())
 s=s.replace('href="#check" data-s="check"','href="#contact" data-s="contact"')

@@ -26,6 +26,11 @@ html='''<div class="rs-b" dir="rtl">
     .rs-b [data-rv]{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0)*90ms)}
     .rs-b [data-rv].is-in{opacity:1;transform:none}
     .rs-svcs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .rs-svc__more{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;margin-top:26px;font-size:15.5px;color:#a9af98;text-align:center}
+    .rs-b .rs-svc__more a,.rs-b .rs-svc__more a:visited{display:inline-flex;align-items:center;gap:7px;color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(202,252,1,.5);padding-bottom:2px;transition:color .2s,border-color .2s}
+    .rs-b .rs-svc__more a:hover{color:#CAFC01;border-color:#CAFC01}
+    .rs-svc__more svg{width:14px;height:14px;transition:transform .2s}
+    .rs-svc__more a:hover svg{transform:translateX(-3px)}
     .rs-svc{position:relative;padding:40px 38px 34px;border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.1);overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s}
     .rs-svc:hover{transform:translateY(-6px);border-color:rgba(202,252,1,.4)}
     .rs-svc::before{content:"";position:absolute;inset-inline-end:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(closest-side,rgba(202,252,1,.16),rgba(202,252,1,0));pointer-events:none}
@@ -158,6 +163,7 @@ html='''<div class="rs-b" dir="rtl">
   <section class="rs-b__sec" id="services" aria-label="שירותים לחנויות"><div class="rs-b__in">
     <div class="rs-b__head" data-rv><p class="rs-b__k">מה אני עושה</p><h2 class="rs-b__h">שני שירותים, מטרה אחת. <em>חנות שמוכרת.</em></h2></div>
     <div class="rs-svcs">@@svc1@@@@svc2@@</div>
+    <div class="rs-svc__more" data-rv><span>צריכים אתר תדמית או דף נחיתה? גם את זה אני בונה.</span><a href="#contact">ספרו לי מה אתם צריכים<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3m4-4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div></section>
   <section class="rs-b__sec" id="reviews" aria-label="ביקורות"><div class="rs-b__in">
     <div class="rs-b__head" data-rv><p class="rs-b__k">מה אומרים הלקוחות</p><h2 class="rs-b__h">לא עוד אתר שנראה טוב. <em>אתר שעובד בשבילך.</em></h2></div>
@@ -176,7 +182,7 @@ html='''<div class="rs-b" dir="rtl">
     <div class="rs-about__side" data-rv><div class="rs-about__img"><img src="@@base@@rs-ran-about.webp" alt="רן שטם" width="880" height="1100" loading="lazy" decoding="async"></div><ul class="rs-tools" aria-label="כלים שאני עובד איתם"><li>WooCommerce</li><li>Shopify</li><li>WordPress</li><li>Elementor</li><li>Figma</li><li>Google SEO</li><li>Automation</li><li>Cloud Hosting</li></ul></div>
     <div class="rs-about__txt" data-rv style="--d:1"><p class="rs-b__k">קצת עלי</p><h2 class="rs-b__h">היי, אני <em>רן שטם.</em></h2>
       <p class="rs-about__hi">אבא לשניים, ומפתח אתרים מאז קצת לפני הקורונה.</p>
-      <p>התחלתי בקורס שהיה כישלון חרוץ, אבל פיתוח בוורדפרס תפס אותי ולא עזב. היום אני מתמחה בבניית חנויות אינטרנטיות ובשיפור חנויות קיימות. חוויית קנייה נעימה, ממשק נקי ופתרונות טכנולוגיים שעובדים.</p>
+      <p>התחלתי בקורס שהיה כישלון חרוץ, אבל פיתוח בוורדפרס תפס אותי ולא עזב. מאז אני עוסק בבניית אתרים, והיום אני מתמחה בבניית חנויות אינטרנטיות בווקומרס ובשיפור חנויות קיימות. חוויית קנייה נעימה, ממשק נקי ופתרונות טכנולוגיים שעובדים.</p>
       <p>אני עובד עם עסקים מכל הארץ ומחו״ל, וכל התהליך נעשה מרחוק, בלי קשר למיקום שלכם.</p>
       <p>מה שמניע אותי הוא השילוב בין טכנולוגיה לחיבור אנושי. המטרה היא לעזור לכם לממש את החזון העסקי, בצורה המקצועית והיעילה ביותר.</p>
       <div class="rs-stats"><div class="rs-stat"><b><i>+</i><span data-n="120">120</span></b><small>פרויקטים הושלמו</small></div><div class="rs-stat"><b><i>+</i><span data-n="8">8</span></b><small>שנות ניסיון</small></div></div>
@@ -255,8 +261,8 @@ html='''<div class="rs-b" dir="rtl">
 </div>
 '''
 ILL=['<svg viewBox="0 0 64 64" aria-hidden="true"><path class="d" pathLength="1" d="M8 14h30a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H22l-8 7v-7H8a0 0 0 0 1 0 0V20a6 6 0 0 1 6-6"/><path class="d a" pathLength="1" style="--dl:.35s" d="M50 30h4a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4h-2v6l-7-6H34a4 4 0 0 1-4-4v-1"/><path class="d a" pathLength="1" style="--dl:.6s" d="M17 23h18M17 30h11"/></svg>', '<svg viewBox="0 0 64 64" aria-hidden="true"><rect class="d" pathLength="1" x="8" y="10" width="48" height="44" rx="5"/><path class="d" pathLength="1" style="--dl:.25s" d="M8 21h48"/><path class="d a" pathLength="1" style="--dl:.45s" d="M15 29h16v18H15z"/><path class="d a" pathLength="1" style="--dl:.7s" d="M37 30h13M37 37h13M37 44h8"/></svg>', '<svg viewBox="0 0 64 64" aria-hidden="true"><path class="d" pathLength="1" d="M10 12h10v10H10zM10 28h10v10H10zM10 44h10v10H10z"/><path class="d" pathLength="1" style="--dl:.2s" d="M28 17h26M28 33h26M28 49h18"/><path class="d a" pathLength="1" style="--dl:.5s" d="M12 17l3 3 5-6"/><path class="d a" pathLength="1" style="--dl:.8s" d="M12 33l3 3 5-6"/><path class="d a" pathLength="1" style="--dl:1.1s" d="M12 49l3 3 5-6"/></svg>', '<svg viewBox="0 0 64 64" aria-hidden="true"><path class="d" pathLength="1" d="M10 26v26h44V26"/><path class="d" pathLength="1" style="--dl:.2s" d="M6 26l5-13h42l5 13a6.5 6.5 0 0 1-13 0 6.5 6.5 0 0 1-13 0 6.5 6.5 0 0 1-13 0 6.5 6.5 0 0 1-13 0z"/><path class="d" pathLength="1" style="--dl:.45s" d="M38 52V37h10v15"/><rect class="d a f" pathLength="1" style="--dl:.7s" x="15" y="35" width="17" height="10" rx="2"/></svg>']
-rep={'svc1':svc(box,'בניית חנויות אינטרנטיות','חנות ווקומרס מלאה עם סליקה, משלוחים ומלאי, שבנויה למכור ולהופיע בגוגל.',['דפי מוצר שמניעים לרכישה','חנות מותאמת לקידום אורגני בגוגל','אוטומציות לנטישת עגלה, מיילים אוטומטיים וחיבור למערכות דיוור ו-CRM'],['חנות אינטרנטית','ווקומרס','איקומרס']),
-'svc2':svc(coin,'שיפור המרות לחנות קיימת','חנות קיימת שלא מוכרת מספיק? אני בודק איפה גולשים נוטשים, ומשפר את מבנה החנות, דפי המוצר ותהליך הרכישה. המטרה היא יותר הזמנות מאותה תנועה, בלי להגדיל תקציב פרסום.',['עלייה בכמות הרכישות ובאחוז ההמרה','הגדלת ערך סל הקנייה הממוצע','תהליך תשלום קצר וברור, שמעורר ביטחון'],['שיפור המרות','CRO','WooCommerce']),
+rep={'svc1':svc(box,'בניית חנויות אינטרנטיות','בניית חנות אינטרנטית בווקומרס, מלאה עם סליקה, משלוחים וניהול מלאי. חנות שבנויה למכור ולהופיע בגוגל, ולא רק להיראות טוב.',['דפי מוצר שמניעים לרכישה','חנות מותאמת לקידום אורגני בגוגל','אוטומציות לנטישת עגלה, מיילים אוטומטיים וחיבור למערכות דיוור ו-CRM'],['חנות אינטרנטית','ווקומרס','איקומרס']),
+'svc2':svc(coin,'שיפור המרות לחנות קיימת','חנות קיימת שלא מוכרת מספיק? שיפור המרות מתחיל בבדיקה של המקומות שבהם גולשים נוטשים. משם אני משפר את מבנה החנות, דפי המוצר ותהליך הרכישה, כדי לקבל יותר הזמנות מאותה תנועה בלי להגדיל תקציב פרסום.',['עלייה בכמות הרכישות ובאחוז ההמרה','הגדלת ערך סל הקנייה הממוצע','תהליך תשלום קצר וברור, שמעורר ביטחון'],['שיפור המרות','CRO','WooCommerce']),
 'pj':pj,'base':BASE,'nst':str(nst),'nall':str(len(cards)),'steps':''.join('<div class="rs-jst%s" style="grid-column:%d"><div class="rs-jst__c"><span class="rs-jst__n" aria-hidden="true">0%d</span><span class="rs-jst__i">%s</span><h3>%s</h3><p>%s</p></div></div>'%(' is-b',i+1,i+1,ILL[i],t,d) for i,(t,d) in enumerate(steps))}
 for k,v in rep.items(): html=html.replace('@@'+k+'@@',v)
 html=html.replace('<article class="rs-svc">','<article class="rs-svc" data-rv>',1).replace('<article class="rs-svc">','<article class="rs-svc" data-rv style="--d:1">',1)
