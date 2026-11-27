@@ -50,6 +50,12 @@
       .rs-audit__fw.f2{--fs:44px;top:-18px;inset-inline-end:-4px}
       .rs-audit__fw.f3{display:none}
     }
+    @media (hover:none),(max-width:980px){
+      .rs-audit__in{perspective:none}
+      .rs-audit__card{transform-style:flat;transform:translateY(22px)}
+      .rs-audit.is-in .rs-audit__card{transform:none}
+      .rs-audit .rs-audit__kicker,.rs-audit h2.rs-audit__h,.rs-audit p.rs-audit__p,.rs-audit__pts,.rs-audit__fw.f1,.rs-audit__fw.f2,.rs-audit__fw.f3{transform:none}
+    }
     @media (prefers-reduced-motion:reduce){.rs-audit .rs-audit__card{opacity:1;transform:none;transition:none}.rs-audit .rs-audit__fw{animation:none}}
   </style>
   <div class="rs-audit__in"><div class="rs-audit__card">

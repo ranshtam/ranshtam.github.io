@@ -109,6 +109,11 @@
       .rs-ct__opt span{padding:14px 12px;font-size:14.5px;gap:9px}
       .rs-ct__opt span svg{width:22px;height:22px}
     }
+    @media (hover:none),(max-width:980px){
+      .rs-ct__stage{perspective:none}
+      .rs-ct__card{transform:translateY(24px)}
+      .rs-ct.is-in .rs-ct__card,.rs-ct.is-tilt .rs-ct__card{transform:none}
+    }
     @media (prefers-reduced-motion:reduce){.rs-ct .rs-ct__txt,.rs-ct .rs-ct__card{opacity:1;transform:none;transition:none}.rs-ct__go .sp{animation-duration:1.4s}}
   </style>
   <div class="rs-ct__glow" aria-hidden="true"></div>
