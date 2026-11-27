@@ -102,6 +102,17 @@
           if(y<64){window.scrollTo(0,window.scrollY+y-Math.max(84,(h-r.height)*.3));return;}
           if(y+r.height>h-12){window.scrollTo(0,window.scrollY+y-Math.max(84,(h-r.height)*.3));}
         };
+        /* Take over the tap: focus without the browser's own scroll-into-view, which iOS miscalculates here. */
+        var tx0=0,ty0=0,moved=false;
+        document.addEventListener('touchstart',function(e){var t=e.touches[0];tx0=t.clientX;ty0=t.clientY;moved=false;},{passive:true,capture:true});
+        document.addEventListener('touchmove',function(e){var t=e.touches[0];if(Math.abs(t.clientX-tx0)>10)moved=true;if(Math.abs(t.clientY-ty0)>10)moved=true;},{passive:true,capture:true});
+        document.addEventListener('touchend',function(e){
+          var el=e.target; if(!el)return; if(!el.matches)return; if(moved)return;
+          if(!el.matches('.rs-audit__url,.rs-ct__i'))return;
+          if(document.activeElement===el)return;
+          e.preventDefault();
+          try{el.focus({preventScroll:true});}catch(x){el.focus();}
+        },{passive:false,capture:true});
         document.addEventListener('focusin',function(e){
           var el=e.target; if(!el)return; if(!el.matches)return;
           if(!el.matches('.rs-audit__url,.rs-ct__i'))return;
