@@ -2,9 +2,12 @@ G = 'body:is(.single-post,.post-type-archive-projects,.category,.tag,.search,.pa
 C = G + ' :is([data-elementor-type="wp-page"],.elementor-location-single,.elementor-location-archive)'
 L = ['030a0bb', '0981f5a', 'c07af1d', '2a4baa8']
 rules = [
-    '@font-face{font-family:"Nostela FS";font-weight:900;font-style:normal;font-display:swap;src:url(https://ranshtam.com/wp-content/uploads/fonts/Nostela_Fs-Black.woff2) format("woff2")}',
-    C + ' :is(h1,h2){font-family:"Nostela FS",Talent,sans-serif!important;font-weight:900!important;letter-spacing:0!important}',
-    '@media (max-width:767px){' + C + ' h1{font-size:clamp(24px,7.4vw,32px)!important;line-height:1.15!important}' + C + ' h2{font-size:clamp(20px,6vw,25px)!important;line-height:1.2!important}}',
+    '@font-face{font-family:"Nostela FS";font-weight:500;font-style:normal;font-display:swap;src:url(https://ranshtam.com/wp-content/uploads/fonts/Nostela_Fs-Medium.woff2) format("woff2")}',
+    C + ' :is(h1,h2){font-family:"Nostela FS",Talent,sans-serif!important;font-weight:500!important;letter-spacing:0!important}',
+    C + ' h1{font-size:clamp(28px,3.200vw,46px)!important;line-height:1.14!important}',
+    'body.single-post .elementor-location-single h1{font-size:clamp(24px,2.300vw,34px)!important;line-height:1.22!important}',
+    C + ' h2{font-size:clamp(21px,1.900vw,28px)!important;line-height:1.24!important}',
+    '@media (max-width:767px){' + C + ' h1{font-size:clamp(24px,7vw,30px)!important}' + 'body.single-post .elementor-location-single h1{font-size:clamp(20px,5.600vw,24px)!important}' + C + ' h2{font-size:clamp(19px,5.400vw,23px)!important}}',
     '/* rs-skin: RS Dark Lime over blog, posts, projects and legal pages */',
     G + '{background:#101400!important}',
     C + '{color:#c9cdbb}',
