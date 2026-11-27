@@ -5,7 +5,8 @@ CK='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" fi
 def dom(u): return re.sub(r'^https?://(www\.)?','',u).strip('/').split('/')[0].lower()
 FEAT=[4,5,20,29,38,39]
 order=[c for n in FEAT for c in cards if c['n']==n]
-pj=''.join('<a class="rs-pj" href="%s" target="_blank" rel="noopener" data-rv style="--d:%d"><span class="rs-pj__img"><span class="rs-pj__br"><span class="rs-pj__bar" aria-hidden="true"><i></i><i></i><i></i><u>%s</u></span><img src="%srs-pm-%02d-d.webp" alt="%s" width="720" height="450" loading="lazy" decoding="async"></span><span class="rs-pj__ph"><img src="%srs-pm-%02d-m.webp" alt="%s" width="240" height="406" loading="lazy" decoding="async"></span></span><span class="rs-pj__meta"><b>%s</b><i>%s</i></span></a>'%(c['url'],i%4,dom(c['url']),BASE,c['n'],'האתר של '+c['name'].replace('"','&quot;')+' במחשב',BASE,c['n'],'האתר של '+c['name'].replace('"','&quot;')+' בטלפון',c['name'],dom(c['url'])) for i,c in enumerate(order))
+PM=lambda n:'rs-pm2-39' if n==39 else 'rs-pm-%02d'%n
+pj=''.join('<a class="rs-pj" href="%s" target="_blank" rel="noopener" data-rv style="--d:%d"><span class="rs-pj__img"><span class="rs-pj__br"><span class="rs-pj__bar" aria-hidden="true"><i></i><i></i><i></i><u>%s</u></span><img src="%s%s-d.webp" alt="%s" width="720" height="450" loading="lazy" decoding="async"></span><span class="rs-pj__ph"><img src="%s%s-m.webp" alt="%s" width="240" height="406" loading="lazy" decoding="async"></span></span><span class="rs-pj__meta"><b>%s</b><i>%s</i></span></a>'%(c['url'],i%4,dom(c['url']),BASE,PM(c['n']),'האתר של '+c['name'].replace('"','&quot;')+' במחשב',BASE,PM(c['n']),'האתר של '+c['name'].replace('"','&quot;')+' בטלפון',c['name'],dom(c['url'])) for i,c in enumerate(order))
 nst=sum(1 for c in cards if c['store'])
 box='<span class="rs-i3 rs-i3--box"><span class="o"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><i class="c5"></i><i class="c6"></i></span></span>'
 coin='<span class="rs-i3 rs-i3--coin"><span class="o"><i class="m m1"></i><i class="m m2"></i><i class="m m3"></i><i class="cf"></i><i class="cb"></i></span></span>'
@@ -163,7 +164,6 @@ html='''<div class="rs-b" dir="rtl">
   <section class="rs-b__sec" id="services" aria-label="שירותים לחנויות"><div class="rs-b__in">
     <div class="rs-b__head" data-rv><p class="rs-b__k">מה אני עושה</p><h2 class="rs-b__h">שני שירותים, מטרה אחת. <em>חנות שמוכרת.</em></h2></div>
     <div class="rs-svcs">@@svc1@@@@svc2@@</div>
-    <div class="rs-svc__more" data-rv><span>צריכים אתר תדמית או דף נחיתה? גם את זה אני בונה.</span><a href="#contact">ספרו לי מה אתם צריכים<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3m4-4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div></section>
   <section class="rs-b__sec" id="reviews" aria-label="ביקורות"><div class="rs-b__in">
     <div class="rs-b__head" data-rv><p class="rs-b__k">מה אומרים הלקוחות</p><h2 class="rs-b__h">לא עוד אתר שנראה טוב. <em>אתר שעובד בשבילך.</em></h2></div>
