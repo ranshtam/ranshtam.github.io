@@ -2,6 +2,7 @@
   <style>
     .rs-ct{--nos:"Nostela FS",Talent,Arial,sans-serif;--tal:Talent,"Segoe UI",Arial,sans-serif;position:relative;direction:rtl;text-align:right;overflow:hidden;overflow:clip;background:#101400;color:#fff;font-family:var(--tal);padding:120px 0 130px;scroll-margin-top:70px;border-top:1px solid rgba(255,255,255,.08)}
     .rs-ct *{box-sizing:border-box}
+    .rs-ct__anchor{position:absolute;top:0;left:0;width:1px;height:1px;scroll-margin-top:70px}
     .rs-ct p:empty{display:none}
     .rs-ct form.rs-ct__form p{display:contents;margin:0}
     .rs-ct__glow{position:absolute;inset:auto auto -30% -10%;width:70%;height:90%;background:radial-gradient(closest-side,rgba(202,252,1,.13),rgba(202,252,1,0));pointer-events:none}
@@ -135,7 +136,7 @@
     }
     @media (prefers-reduced-motion:reduce){.rs-ic .d{stroke-dashoffset:0;transition:none}.rs-ic .aw,.rs-ic .dr,.rs-ic .b,.rs-ic .ar{animation:none!important}.rs-ct .rs-ct__txt,.rs-ct .rs-ct__card{opacity:1;transform:none;transition:none}.rs-ct__go .sp{animation-duration:1.4s}}
   </style>
-  <div class="rs-ct__glow" aria-hidden="true"></div>
+  <div id="form" class="rs-ct__anchor" aria-hidden="true"></div><div class="rs-ct__glow" aria-hidden="true"></div>
   <div class="rs-ct__in">
     <div class="rs-ct__txt">
       <p class="rs-ct__k">שיחת ייעוץ ראשונית</p>

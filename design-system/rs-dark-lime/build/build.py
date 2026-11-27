@@ -22,9 +22,9 @@ rows=[['14','01','15','13'],['02','18','03','09'],['10','19','06','08'],['20','1
 n=[0]
 def tile(k):
     n[0]+=1
-    return '<div class="rs-tile" style="--n:%d"><img src="%srs-w480-%s.webp" alt="" width="480" height="270" decoding="async"></div>'%(n[0],BASE,k)
+    return '<div class="rs-tile" style="--n:%d"><img class="skip-lazy no-lazyload" data-no-lazy="1" data-skip-lazy="1" src="%srs-w480-%s.webp" alt="" width="480" height="270" loading="lazy" fetchpriority="low" decoding="async"></div>'%(n[0],BASE,k)
 th=''.join('<div class="rs-wall__r">'+''.join(tile(k) for k in r)+'</div>' for r in rows)
-stage='<div class="rs-hero__stage"><div class="rs-hero__glow"></div><div class="rs-wall" aria-hidden="true">'+th+'</div><img class="rs-hero__me skip-lazy no-lazyload" data-no-lazy="1" data-skip-lazy="1" loading="eager" src="'+BASE+'rs-ran-hero2-860.webp" srcset="'+BASE+'rs-ran-hero2-520.webp 520w, '+BASE+'rs-ran-hero2-860.webp 860w" sizes="(max-width:900px) 250px, 420px" alt="רן שטם, בונה חנויות אינטרנטיות" width="860" height="1438" fetchpriority="high"></div>'
+stage='<div class="rs-hero__stage"><div class="rs-hero__glow"></div><div class="rs-wall" aria-hidden="true">'+th+'</div><img class="rs-hero__me skip-lazy no-lazyload" data-no-lazy="1" data-skip-lazy="1" loading="eager" src="'+BASE+'rs-ran-hero2-520.webp" srcset="'+BASE+'rs-ran-hero2-520.webp 520w, '+BASE+'rs-ran-hero2-860.webp 860w" sizes="(max-width:900px) 250px, 420px" alt="רן שטם, בונה חנויות אינטרנטיות" width="860" height="1438" fetchpriority="high"></div>'
 s=sub1(r'<div class="rs-hero__stage">.*?</canvas>\s*</div>',stage,s)
 # css: drop ring rules, add overrides
 s=re.sub(r'\n\s*\.rs-ring[^\n]*','',s)
@@ -107,6 +107,7 @@ s=s.rstrip()+'\n'+open('rest.html',encoding='utf8').read()
 s=s.rstrip()+'\n'+open('faq.html',encoding='utf8').read()
 s=s.rstrip()+'\n'+open('contact.html',encoding='utf8').read()
 s=s.rstrip()+'\n'+open('footer.tpl.html',encoding='utf8').read().replace('@@MAIL@@',open('.mail.txt').read().strip())
+s=s.rstrip()+'\n'+open('wa.html',encoding='utf8').read()
 s=s.replace('href="#check" data-s="check"','href="#contact" data-s="contact"')
 s=s.replace('href="https://ranshtam.com/#contact"','href="#contact"')
 def _collapse(h):
