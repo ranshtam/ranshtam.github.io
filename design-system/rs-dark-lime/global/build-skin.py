@@ -9,6 +9,7 @@ def ids(l, suf=''):
 
 light = ['3402f10', 'db7b0c8', '32fc803', 'd69d525', '50f9955']
 rules = [
+    '@font-face{font-family:"Nostela FS";font-weight:900;font-style:normal;font-display:swap;src:url(https://ranshtam.com/wp-content/uploads/fonts/Nostela_Fs-Black.woff2) format("woff2")}',
     '/* rs-skin: RS Dark Lime over the Elementor service pages */',
     P + '{background:#101400!important}',
     R + '{color:#c9cdbb;background:radial-gradient(900px 520px at 50% 0,rgba(202,252,1,.07),rgba(202,252,1,0) 70%)}',
@@ -38,11 +39,21 @@ rules = [
     R + ' .elementor-tab-title.elementor-active .elementor-toggle-icon{background:#CAFC01!important;border-color:#CAFC01!important}',
     R + ' .elementor-tab-title.elementor-active .elementor-toggle-icon :is(svg,i){fill:#101400!important;color:#101400!important}',
     R + ' .elementor-tab-title a{color:#fff!important}',
-    # ---- radar: lime lines on dark, calmer sweep
-    R + ' .rs-radar{--rs-radar-line:#CAFC01!important;--rs-radar-size:min(120%,820px)!important;opacity:.5}',
-    R + ' .rs-radar svg{stroke:rgba(202,252,1,.16)!important}',
-    R + ' .rs-radar__sweep{opacity:.32}',
-    R + ' .rs-radar__blip{box-shadow:0 0 10px rgba(202,252,1,.9)!important}',
+    # ---- hero: floating 3D lime tiles replace the radar (the four blips become the tiles)
+    R + ' .rs-radar{inset:0!important;width:auto!important;height:auto!important;translate:none!important;aspect-ratio:auto!important;border-radius:0!important;overflow:visible!important;-webkit-mask-image:none!important;mask-image:none!important;background:radial-gradient(520px 300px at 50% 46%,rgba(202,252,1,.1),rgba(202,252,1,0) 70%)!important;opacity:1!important;pointer-events:none}',
+    R + ' .rs-radar svg,' + R + ' .rs-radar__sweep,' + R + ' .rs-radar__blip::after{display:none!important}',
+    R + ' .rs-radar__blip{display:block!important;position:absolute!important;width:var(--ts,68px)!important;height:var(--ts,68px)!important;margin:0!important;border-radius:calc(var(--ts,68px)*.28)!important;background:linear-gradient(180deg,#eaff7a,#CAFC01 55%,#b4e000)!important;box-shadow:0 calc(var(--ts,68px)*.1) 0 #7f9d00,0 22px 40px rgba(0,0,0,.45),0 0 44px rgba(202,252,1,.22),inset 0 1px 0 rgba(255,255,255,.65)!important;opacity:1!important;rotate:var(--tr,-8deg);animation:rs-tile-fl var(--td,6s) ease-in-out var(--tl,0s) infinite alternate!important}',
+    R + ' .rs-radar__blip::before{content:"";position:absolute;inset:22%;background:center/contain no-repeat var(--ti)}',
+    '@keyframes rs-tile-fl{from{translate:0 -9px}to{translate:0 9px}}',
+    R + ' .rs-radar__blip:nth-of-type(1){left:13%!important;top:16%!important;--tr:-10deg;--ti:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23101400%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.600-7-5.400-7-10V6l7-3z%27/%3E%3Cpath d=%27M9 12l2.200 2.200L15.200 10%27/%3E%3C/svg%3E")}',
+    R + ' .rs-radar__blip:nth-of-type(2){left:81%!important;top:13%!important;--ts:58px;--tr:9deg;--td:7s;--tl:-2s;--ti:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23101400%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M20 11a8 8 0 0 0-14.300-4M4 4v4h4%27/%3E%3Cpath d=%27M4 13a8 8 0 0 0 14.300 4M20 20v-4h-4%27/%3E%3C/svg%3E")}',
+    R + ' .rs-radar__blip:nth-of-type(3){left:8%!important;top:64%!important;--ts:52px;--tr:7deg;--td:6.500s;--tl:-3.500s;--ti:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23101400%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M13 2L4.500 13.500H11l-1 8.500 8.500-11.500H12l1-8.500z%27/%3E%3C/svg%3E")}',
+    R + ' .rs-radar__blip:nth-of-type(4){left:86%!important;top:62%!important;--ts:64px;--tr:-6deg;--td:7.500s;--tl:-1s;--ti:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23101400%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M20 12a8 8 0 0 1-11.700 7.100L4 20l1-4.200A8 8 0 1 1 20 12z%27/%3E%3Cpath d=%27M9 12h.010M12 12h.010M15 12h.010%27/%3E%3C/svg%3E")}',
+    '@media (max-width:980px){' + R + ' .rs-radar__blip{--ts:38px!important}' + R + ' .rs-radar__blip:nth-of-type(1){left:5%!important;top:5%!important}' + R + ' .rs-radar__blip:nth-of-type(2){left:84%!important;top:4%!important}' + R + ' .rs-radar__blip:nth-of-type(3),' + R + ' .rs-radar__blip:nth-of-type(4){display:none!important}}',
+    '@media (prefers-reduced-motion:reduce){' + R + ' .rs-radar__blip{animation:none!important}}',
+    # ---- headings in Nostela
+    R + ' :is(h1,h2){font-family:"Nostela FS",Talent,sans-serif!important;font-weight:900!important;letter-spacing:0!important}',
+    '@media (max-width:767px){' + R + ' h1{font-size:clamp(30px,9.4vw,38px)!important;line-height:1.12!important}' + R + ' h2{font-size:clamp(23px,7vw,28px)!important;line-height:1.18!important}}',
     # ---- icons: 3D lime tiles like the homepage
     R + ' .elementor-icon-box-icon .elementor-icon{width:60px!important;height:60px!important;padding:0!important;display:grid!important;place-items:center;border-radius:17px!important;background:linear-gradient(180deg,#eaff7a,#CAFC01 55%,#b4e000)!important;box-shadow:0 6px 0 #7f9d00,0 18px 30px rgba(202,252,1,.2),inset 0 1px 0 rgba(255,255,255,.65)!important;transform:rotate(-7deg);transition:transform .45s cubic-bezier(.2,.9,.3,1.5),box-shadow .3s}',
     R + ' .elementor-icon-box-icon .elementor-icon svg{width:26px!important;height:26px!important;fill:#101400!important}',
