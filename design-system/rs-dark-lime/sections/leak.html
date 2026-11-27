@@ -37,15 +37,15 @@
     .rs-leak__viz{grid-area:viz;justify-self:center;align-self:center;width:100%;max-width:520px}
     .rs-leak__viz canvas{display:block;width:100%;aspect-ratio:520/690;max-height:82vh;margin:0 auto}
     @media (max-width:980px){
-      .rs-leak{height:250vh}
-      .rs-leak__pin{height:100vh;height:100svh;min-height:0}
+      .rs-leak{height:250vh;height:calc(var(--vhp,100vh)*2.5)}
+      .rs-leak__pin{height:100vh;height:100svh;height:var(--vhp,100svh);min-height:0}
       .rs-leak__pin::before{left:50%;width:520px;height:520px;transform:translate(-50%,-50%)}
       .rs-leak__in{height:100%;padding:18px 16px 16px;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:center}
       .rs-leak .rs-leak__kicker{font-size:12.5px;margin-bottom:6px}
       .rs-leak h2.rs-leak__h{font-size:clamp(21px,6.2vw,28px)}
       .rs-leak__viz{flex:0 1 auto;min-height:0;max-width:none;display:flex;justify-content:center}
       .rs-leak__viz{width:100%}
-      .rs-leak__viz canvas{width:100%;max-width:none;aspect-ratio:auto;height:50vh;height:50svh;max-height:none;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);mask-composite:intersect}
+      .rs-leak__viz canvas{width:100%;max-width:none;aspect-ratio:auto;height:50vh;height:50svh;height:calc(var(--vhp,100svh)*.5);max-height:none;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);mask-composite:intersect}
       .rs-leak__steps-wrap{min-height:96px;display:flex;flex-direction:column;justify-content:center}
       .rs-leak__steps{max-width:none;gap:0;text-align:start;align-self:stretch;width:100%}
       .rs-leak__steps li{display:none;opacity:1;padding:12px 14px;background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
@@ -212,8 +212,9 @@
       for(k=0;k<3;k++){steps[k].classList.toggle('is-cur',k===cur);steps[k].classList.toggle('is-act',P>.02?k===cur:false);}
       end.classList.toggle('is-on',P>.9);
     }
+    var VH=0,VW=0;
     function prog(){
-      var b=sec.getBoundingClientRect(), vh=window.innerHeight, p;
+      var b=sec.getBoundingClientRect(), vh=VH||window.innerHeight, p;
       p=-b.top/Math.max(1,b.height-vh);
       P=reduce?1:cl(p); ui();
     }
@@ -231,7 +232,10 @@
       step(dt); cam(dt); draw(); raf=requestAnimationFrame(loop);
     }
     function start(){if(raf)return;if(reduce){P=1;pile=30;coins=[];draw();ui();return;}last=performance.now();raf=requestAnimationFrame(loop);}
-    window.addEventListener('scroll',prog,{passive:true}); window.addEventListener('resize',function(){prog();if(reduce)draw();});
+    /* Phones: freeze the viewport height the section is built on. The keyboard and the URL bar change vh, which would resize this 250vh section and shove everything below it. */
+    function freeze(){VH=window.innerHeight;VW=window.innerWidth;sec.style.setProperty('--vhp',VH+'px');}
+    if(window.matchMedia){if(window.matchMedia('(max-width:980px)').matches){freeze();}}
+    window.addEventListener('scroll',prog,{passive:true}); window.addEventListener('resize',function(){if(VH){if(window.innerWidth!==VW){if(window.matchMedia('(max-width:980px)').matches){freeze();}else{VH=0;sec.style.removeProperty('--vhp');}}}else{if(window.matchMedia('(max-width:980px)').matches)freeze();}prog();if(reduce)draw();});
     if('IntersectionObserver' in window){new IntersectionObserver(function(en){vis=en[0].isIntersecting;if(vis)start();},{threshold:0}).observe(sec);}else{vis=true;start();}
     document.addEventListener('visibilitychange',function(){if(document.hidden){vis=false;}else{var b=sec.getBoundingClientRect();vis=b.bottom>0?b.top<window.innerHeight:false;if(vis)start();}});
     sec.__rs={get:function(){return {P:P,arrived:arrived,pile:pile,coins:coins.length,running:!!raf,zoom:Z,kx:KX,ky:KY};}};
