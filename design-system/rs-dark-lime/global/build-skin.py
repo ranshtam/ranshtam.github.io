@@ -120,6 +120,15 @@ ill += [
     '@media (max-width:767px){' + L + '{border-radius:28px!important;margin:6px 8px 48px!important;padding-top:52px!important;padding-bottom:0!important}}',
     '@media (max-width:767px){' + R + ' :is(.elementor-element-50f92a8,.elementor-element-0d59b33){flex-wrap:wrap!important;row-gap:6px!important}}',
 ]
+cards = ['3402f10', 'db7b0c8', '32fc803', 'd69d525']
+for pid, names in [('25384', ['m-security', 'm-updates', 'm-speed', 'm-support']), ('25919', ['p-snippets', 'p-fit', 'p-connect', 'p-logic'])]:
+    B = 'body.page-id-%s.page-id-%s [data-elementor-type="wp-page"] .elementor-element-556e582' % (pid, pid)
+    ill.append(B + ' .elementor-icon-box-icon{display:none!important}')
+    ill.append(B + ' .elementor-widget-icon-box::before{content:"";display:block;width:100%;max-width:218px;aspect-ratio:510/300;margin:6px auto 22px;background:center/contain no-repeat}')
+    ill.append('@media (max-width:767px){' + B + ' .elementor-widget-icon-box::before{max-width:250px;margin-bottom:26px}}')
+    for c, n in zip(cards, names):
+        svg = open('illus/%s.svg' % n, encoding='utf8').read()
+        ill.append(B + ' .elementor-element-%s .elementor-widget-icon-box::before{background-image:url("data:image/svg+xml,%s")}' % (c, quote(svg, safe="/:=;,.-_!*()@ ")))
 css = '\n'.join(rules + ti + ill) + '\n'
 open('skin.css', 'w', encoding='utf8').write(css)
 print('skin bytes', len(css))
