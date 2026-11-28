@@ -49,6 +49,7 @@ add_filter( 'rocket_rucss_inline_content_exclusions', function ( $list ) {
 	$list[] = '.rs-ft{';
 	$list[] = '.rs-waf{';
 	$list[] = '.rs-ct{';
+	$list[] = '.rs-b{';
 	$list[] = 'rs-skin:';
 	return $list;
 } );
@@ -93,6 +94,14 @@ add_action( 'elementor/theme/before_do_header', function () {
 RS_HTML_9X;
 }, 5 );
 add_action( 'elementor/theme/before_do_footer', function () {
+	if ( rs_global_chrome_skip() || ! is_page( 25949 ) ) {
+		return;
+	}
+	echo <<<'RS_HTML_9X'
+@@WOOEXTRA@@
+RS_HTML_9X;
+}, 4 );
+add_action( 'elementor/theme/before_do_footer', function () {
 	if ( rs_global_chrome_skip() || ! is_page( array( 25384, 25949, 25919 ) ) ) {
 		return;
 	}
@@ -108,5 +117,5 @@ add_action( 'elementor/theme/after_do_footer', function () {
 @@FOOTER@@
 RS_HTML_9X;
 }, 50 );
-'''.replace('@@SKIN2@@',open('../skin/skin2.css',encoding='utf8').read().rstrip()).replace('@@SKIN@@',open('../skin/skin.css',encoding='utf8').read().rstrip()).replace('@@CONTACT@@',open('g-contact.html',encoding='utf8').read().rstrip()).replace('@@HEADER@@',open('g-header.html',encoding='utf8').read().rstrip()).replace('@@FOOTER@@',open('g-footer.html',encoding='utf8').read().rstrip())
+'''.replace('@@WOOEXTRA@@',open('../woo/extra.html',encoding='utf8').read().rstrip()).replace('@@SKIN2@@',open('../skin/skin2.css',encoding='utf8').read().rstrip()).replace('@@SKIN@@',open('../skin/skin.css',encoding='utf8').read().rstrip()).replace('@@CONTACT@@',open('g-contact.html',encoding='utf8').read().rstrip()).replace('@@HEADER@@',open('g-header.html',encoding='utf8').read().rstrip()).replace('@@FOOTER@@',open('g-footer.html',encoding='utf8').read().rstrip())
 open('snippet.php','w',encoding='utf8').write(php); print('snippet',len(php))

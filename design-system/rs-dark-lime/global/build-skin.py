@@ -74,6 +74,7 @@ rules = [
     R + ' h1{font-size:clamp(34px,4vw,58px)!important;line-height:1.1!important}',
     R + ' h2{font-size:clamp(26px,2.800vw,40px)!important;line-height:1.16!important}',
     '@media (max-width:767px){' + R + ' h1{font-size:clamp(26px,7.6vw,31px)!important;line-height:1.15!important}' + R + ' h2{font-size:clamp(19px,5.4vw,22px)!important;line-height:1.25!important}' + R + ' :is(h1,h2){text-wrap:balance}' + R + ' .ph-line:is(.ph-1,.ph-2){font-size:clamp(23px,6.6vw,27px)!important;line-height:1.18!important}' + R + ' .ph-mark{font-size:inherit!important}}',
+    R + ' :is(.elementor-element-a0e64a4,.elementor-element-54e1649) .elementor-heading-title{font-size:clamp(28px,2.5vw,36px)!important;line-height:1.1!important;white-space:nowrap!important}',
     # ---- icons: 3D lime tiles like the homepage
     R + ' .elementor-icon-box-icon .elementor-icon{width:60px!important;height:60px!important;padding:0!important;display:grid!important;place-items:center;border-radius:17px!important;background:linear-gradient(180deg,#eaff7a,#CAFC01 55%,#b4e000)!important;box-shadow:0 6px 0 #7f9d00,0 18px 30px rgba(202,252,1,.2),inset 0 1px 0 rgba(255,255,255,.65)!important;transform:rotate(-7deg);transition:transform .45s cubic-bezier(.2,.9,.3,1.5),box-shadow .3s}',
     R + ' .elementor-icon-box-icon .elementor-icon svg{width:26px!important;height:26px!important;fill:#101400!important}',
