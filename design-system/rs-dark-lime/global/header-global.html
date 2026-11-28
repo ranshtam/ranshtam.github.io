@@ -47,6 +47,8 @@
       .rs-hd__nav{display:none}
       .rs-hd__sp{flex:1}
       .rs-hd__bar a.rs-hd__cta{height:40px;padding:0 15px;font-size:14px}
+      .rs-hd .rs-hd__bar a.rs-hd__cta{opacity:0;visibility:hidden;transform:scale(.92);pointer-events:none;transition:opacity .28s ease,transform .28s ease,visibility .28s}
+      .rs-hd.is-cta .rs-hd__bar a.rs-hd__cta{opacity:1;visibility:visible;transform:none;pointer-events:auto}
       .rs-hd.is-stuck .rs-hd__bar a.rs-hd__cta{height:38px}
       .rs-hd button.rs-hd__brg{display:block}
       .rs-hero .rs-hero__in{padding-top:88px}
@@ -99,6 +101,7 @@
     function tick(){
       raf=0; var y=window.pageYOffset, vh=window.innerHeight, hide=hd.classList.contains('is-hide'), open=hd.classList.contains('is-open'), i, e, r, cur='', lk, pin=false;
       hd.classList.toggle('is-stuck',y>40);
+      hd.classList.toggle('is-cta',y>Math.min(vh*.72,600));
       lk=document.querySelector('.rs-leak'); if(lk){r=lk.getBoundingClientRect();if(r.top<=8){if(r.bottom>=vh-8)pin=true;}}
       if(Date.now()>lock){if(y>lastY+6){if(y>260)hide=true;}else if(y<lastY-6){hide=false;}}else{hide=false;}
       if(y<120)hide=false; if(pin)hide=true; if(open)hide=false;
