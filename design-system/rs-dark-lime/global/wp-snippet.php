@@ -250,8 +250,8 @@ add_action( 'elementor/theme/before_do_header', function () {
       .rs-hd__nav{display:none}
       .rs-hd__sp{flex:1}
       .rs-hd__bar a.rs-hd__cta{height:40px;padding:0 15px;font-size:14px}
-      .rs-hd .rs-hd__bar a.rs-hd__cta{opacity:0;visibility:hidden;transform:scale(.92);pointer-events:none;transition:opacity .28s ease,transform .28s ease,visibility .28s}
-      .rs-hd.is-cta .rs-hd__bar a.rs-hd__cta{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+      body:is(.home,.page-id-26013,.page-id-25384,.page-id-25949,.page-id-25919) .rs-hd .rs-hd__bar a.rs-hd__cta{opacity:0;visibility:hidden;transform:scale(.92);pointer-events:none;transition:opacity .28s ease,transform .28s ease,visibility .28s}
+      body:is(.home,.page-id-26013,.page-id-25384,.page-id-25949,.page-id-25919) .rs-hd.is-cta .rs-hd__bar a.rs-hd__cta{opacity:1;visibility:visible;transform:none;pointer-events:auto}
       .rs-hd.is-stuck .rs-hd__bar a.rs-hd__cta{height:38px}
       .rs-hd button.rs-hd__brg{display:block}
       .rs-hero .rs-hero__in{padding-top:88px}
