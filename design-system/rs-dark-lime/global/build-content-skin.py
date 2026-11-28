@@ -7,7 +7,7 @@ rules = [
     C + ' h1{font-size:clamp(28px,3.200vw,46px)!important;line-height:1.14!important}',
     'body.single-post .elementor-location-single h1{font-size:clamp(24px,2.300vw,34px)!important;line-height:1.22!important}',
     C + ' h2{font-size:clamp(21px,1.900vw,28px)!important;line-height:1.24!important}',
-    '@media (max-width:767px){' + C + ' h1{font-size:clamp(24px,7vw,30px)!important}' + 'body.single-post .elementor-location-single h1{font-size:clamp(20px,5.600vw,24px)!important}' + C + ' h2{font-size:clamp(19px,5.400vw,23px)!important}}',
+    '@media (max-width:767px){' + C + ' h1{font-size:clamp(23px,6.6vw,27px)!important;line-height:1.18!important}' + 'body.single-post .elementor-location-single h1{font-size:clamp(18px,5vw,20px)!important;line-height:1.3!important}' + C + ' h2{font-size:clamp(17px,4.7vw,19px)!important;line-height:1.3!important}' + C + ' :is(h1,h2){text-wrap:balance}}',
     '/* rs-skin: RS Dark Lime over blog, posts, projects and legal pages */',
     G + '{background:#101400!important}',
     C + '{color:#c9cdbb}',
