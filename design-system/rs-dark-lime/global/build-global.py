@@ -63,6 +63,12 @@ function rs_global_chrome_skip() {
 	return false;
 }
 add_action( 'wp_head', function () {
+	if ( rs_global_chrome_skip() || ! is_page( 25949 ) ) {
+		return;
+	}
+	echo '<link rel="preload" as="image" fetchpriority="high" href="https://ranshtam.com/wp-content/uploads/rs-hs-05-d-720.webp" imagesrcset="https://ranshtam.com/wp-content/uploads/rs-hs-05-d-720.webp 720w, https://ranshtam.com/wp-content/uploads/rs-hs-05-d.webp 1440w" imagesizes="(max-width:767px) 72vw, 560px">' . "\n";
+}, 2 );
+add_action( 'wp_head', function () {
 	if ( rs_global_chrome_skip() || ! is_page( array( 25384, 25949, 25919 ) ) ) {
 		return;
 	}
