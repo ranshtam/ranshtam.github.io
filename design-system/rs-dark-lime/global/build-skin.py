@@ -129,6 +129,8 @@ for pid, names in [('25384', ['m-security', 'm-updates', 'm-speed', 'm-support']
     for c, n in zip(cards, names):
         svg = open('illus/%s.svg' % n, encoding='utf8').read()
         ill.append(B + ' .elementor-element-%s .elementor-widget-icon-box::before{background-image:url("data:image/svg+xml,%s")}' % (c, quote(svg, safe="/:=;,.-_!*()@ ")))
+K = 'body:is(.page-id-25384,.page-id-25949,.page-id-25919)'
+ill.append(':is(' + ','.join(K + ' .elementor-element-' + i for i in ['8713ad1', '83d7dee', 'c0542b4', '4f152eb', '44168a0']) + ',' + K + ' .rs-b--in .rs-b__k,' + K + ' .rs-ct .rs-ct__k){display:none!important}')
 css = '\n'.join(rules + ti + ill) + '\n'
 open('skin.css', 'w', encoding='utf8').write(css)
 print('skin bytes', len(css))
