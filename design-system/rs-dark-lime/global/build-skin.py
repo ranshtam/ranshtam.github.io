@@ -105,6 +105,12 @@ rules = [
     '@media (prefers-reduced-motion:reduce){' + R + ' .elementor-icon-box-icon .elementor-icon,' + ids(light) + ',' + R + ' .elementor-element-90debad{transition:none!important;transform:none!important}}',
 ]
 ti = [l.strip().replace('.rs-b #reviews ', R + ' #reviews ') for l in open('ti-rules.txt', encoding='utf8').read().split('\n') if l.strip()]
-css = '\n'.join(rules + ti) + '\n'
+from urllib.parse import quote
+ill = []
+for wid, name in [('dd5e720', 'checkout'), ('9dbce38', 'mobile'), ('f583806', 'manage'), ('19e7cc6', 'grow')]:
+    svg = open('illus/%s-dark.svg' % name, encoding='utf8').read()
+    ill.append('body.page-id-25949 .elementor-element-%s img{content:url("data:image/svg+xml,%s")}' % (wid, quote(svg, safe="/:=;,.-_!*()@ ")))
+ill.append('@media (min-width:768px){body.page-id-25949 .elementor-element-33dd122 .rs-radar{z-index:3;pointer-events:none}body.page-id-25949 [data-elementor-type="wp-page"] .elementor-element-33dd122 .elementor-element-831e867{z-index:3!important;pointer-events:none}body.page-id-25949.page-id-25949 [data-elementor-type="wp-page"] .rs-radar .rs-radar__blip:nth-of-type(3){left:3.5%!important;top:60%!important}body.page-id-25949.page-id-25949 [data-elementor-type="wp-page"] .rs-radar .rs-radar__blip:nth-of-type(4){left:91.5%!important;top:58%!important}}')
+css = '\n'.join(rules + ti + ill) + '\n'
 open('skin.css', 'w', encoding='utf8').write(css)
 print('skin bytes', len(css))
