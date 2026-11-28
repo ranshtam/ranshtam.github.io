@@ -107,10 +107,19 @@ rules = [
 ti = [l.strip().replace('.rs-b #reviews ', R + ' #reviews ') for l in open('ti-rules.txt', encoding='utf8').read().split('\n') if l.strip()]
 from urllib.parse import quote
 ill = []
-for wid, name in [('dd5e720', 'checkout'), ('9dbce38', 'mobile'), ('f583806', 'manage'), ('19e7cc6', 'grow')]:
-    svg = open('illus/%s-dark.svg' % name, encoding='utf8').read()
-    ill.append('body.page-id-25949 .elementor-element-%s img{content:url("data:image/svg+xml,%s")}' % (wid, quote(svg, safe="/:=;,.-_!*()@ ")))
 ill.append('@media (min-width:768px){body.page-id-25949 .elementor-element-33dd122 .rs-radar{z-index:3;pointer-events:none}body.page-id-25949 [data-elementor-type="wp-page"] .elementor-element-33dd122 .elementor-element-831e867{z-index:3!important;pointer-events:none}body.page-id-25949.page-id-25949 [data-elementor-type="wp-page"] .rs-radar .rs-radar__blip:nth-of-type(3){left:3.5%!important;top:60%!important}body.page-id-25949.page-id-25949 [data-elementor-type="wp-page"] .rs-radar .rs-radar__blip:nth-of-type(4){left:91.5%!important;top:58%!important}}')
+L = R.replace('body:is', 'body:is(.page-id-25384,.page-id-25949,.page-id-25919):is') + ' .elementor-element-556e582'
+C = L + ' :is(.elementor-element-3402f10,.elementor-element-db7b0c8,.elementor-element-32fc803,.elementor-element-d69d525)'
+ill += [
+    L + '{background:#ECEEE2!important;border-radius:44px!important;margin:10px 14px 76px!important;width:auto!important;max-width:none!important;overflow:hidden;padding-top:84px!important;padding-bottom:0!important}',
+    L + '::before{display:none!important}',
+    L + ' :is(h1,h2,h3,.elementor-heading-title,.elementor-heading-title *,.elementor-icon-box-title,.elementor-icon-box-title *){color:#101400!important}',
+    L + ' :is(p,.elementor-widget-text-editor,.elementor-widget-text-editor *,.elementor-icon-box-description){color:#4a4e3c!important}',
+    C + '{background:#fff!important;border:1px solid rgba(16,20,0,.08)!important;box-shadow:0 20px 44px rgba(16,20,0,.09)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}',
+    C + '::before,' + C + '::after{display:none!important}',
+    '@media (max-width:767px){' + L + '{border-radius:28px!important;margin:6px 8px 48px!important;padding-top:52px!important;padding-bottom:0!important}}',
+    '@media (max-width:767px){' + R + ' :is(.elementor-element-50f92a8,.elementor-element-0d59b33){flex-wrap:wrap!important;row-gap:6px!important}}',
+]
 css = '\n'.join(rules + ti + ill) + '\n'
 open('skin.css', 'w', encoding='utf8').write(css)
 print('skin bytes', len(css))
